@@ -1,0 +1,14 @@
+D:\Full Stack\Sysmanager\Sysmanager\Sysmanager\bin\Debug\netcoreapp3.1\Sysmanager.exe
+D:\Full Stack\Sysmanager\Sysmanager\Sysmanager\bin\Debug\netcoreapp3.1\Sysmanager.deps.json
+D:\Full Stack\Sysmanager\Sysmanager\Sysmanager\bin\Debug\netcoreapp3.1\Sysmanager.runtimeconfig.json
+D:\Full Stack\Sysmanager\Sysmanager\Sysmanager\bin\Debug\netcoreapp3.1\Sysmanager.runtimeconfig.dev.json
+D:\Full Stack\Sysmanager\Sysmanager\Sysmanager\bin\Debug\netcoreapp3.1\Sysmanager.dll
+D:\Full Stack\Sysmanager\Sysmanager\Sysmanager\bin\Debug\netcoreapp3.1\Sysmanager.pdb
+D:\Full Stack\Sysmanager\Sysmanager\Sysmanager\obj\Debug\netcoreapp3.1\Sysmanager.csproj.AssemblyReference.cache
+D:\Full Stack\Sysmanager\Sysmanager\Sysmanager\obj\Debug\netcoreapp3.1\Sysmanager.GeneratedMSBuildEditorConfig.editorconfig
+D:\Full Stack\Sysmanager\Sysmanager\Sysmanager\obj\Debug\netcoreapp3.1\Sysmanager.AssemblyInfoInputs.cache
+D:\Full Stack\Sysmanager\Sysmanager\Sysmanager\obj\Debug\netcoreapp3.1\Sysmanager.AssemblyInfo.cs
+D:\Full Stack\Sysmanager\Sysmanager\Sysmanager\obj\Debug\netcoreapp3.1\Sysmanager.csproj.CoreCompileInputs.cache
+D:\Full Stack\Sysmanager\Sysmanager\Sysmanager\obj\Debug\netcoreapp3.1\Sysmanager.dll
+D:\Full Stack\Sysmanager\Sysmanager\Sysmanager\obj\Debug\netcoreapp3.1\Sysmanager.pdb
+D:\Full Stack\Sysmanager\Sysmanager\Sysmanager\obj\Debug\netcoreapp3.1\Sysmanager.genruntimeconfig.cache

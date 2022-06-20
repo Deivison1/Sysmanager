@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "UefRuRDrmKBEyd7DzBicn2QDgYn/z9Am8lDL5Gcnp2FxcLS2Hyf5EUEjgxVZ82gE1JLlHj5qMo1aydQYYReVaQ==",
+  "success": true,
+  "projectFilePath": "D:\\Full Stack\\Sysmanager\\Sysmanager\\Sysmanager.API.Admin\\Sysmanager.API.Admin.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\deivison\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning\\5.0.0\\microsoft.aspnetcore.mvc.versioning.5.0.0.nupkg.sha512",
+    "C:\\Users\\deivison\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning.apiexplorer\\5.0.0\\microsoft.aspnetcore.mvc.versioning.apiexplorer.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

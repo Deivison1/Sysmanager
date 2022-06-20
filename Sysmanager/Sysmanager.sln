@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32602.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sysmanager.API.Admin", "Sysmanager.API.Admin\Sysmanager.API.Admin.csproj", "{6E05A5A5-B8E6-4BB3-9A5A-32B100C39933}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sysmanager.Application", "Sysmanager.Application\Sysmanager.Application.csproj", "{51AD386D-2B0D-4F60-BDBB-CAFE14E2E3DF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Items", "Items", "{8D57CAA1-BE94-4191-A21E-7C30D1E6578B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6E05A5A5-B8E6-4BB3-9A5A-32B100C39933}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E05A5A5-B8E6-4BB3-9A5A-32B100C39933}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E05A5A5-B8E6-4BB3-9A5A-32B100C39933}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E05A5A5-B8E6-4BB3-9A5A-32B100C39933}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51AD386D-2B0D-4F60-BDBB-CAFE14E2E3DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51AD386D-2B0D-4F60-BDBB-CAFE14E2E3DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51AD386D-2B0D-4F60-BDBB-CAFE14E2E3DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51AD386D-2B0D-4F60-BDBB-CAFE14E2E3DF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9AD7B587-96E4-49A7-BF9E-6597FA829931}
+	EndGlobalSection
+EndGlobal

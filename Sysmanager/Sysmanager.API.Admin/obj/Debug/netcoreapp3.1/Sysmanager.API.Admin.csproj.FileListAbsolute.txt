@@ -1,0 +1,14 @@
+D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\bin\Debug\netcoreapp3.1\Sysmanager.API.Admin.exe
+D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\bin\Debug\netcoreapp3.1\Sysmanager.API.Admin.deps.json
+D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\bin\Debug\netcoreapp3.1\Sysmanager.API.Admin.runtimeconfig.json
+D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\bin\Debug\netcoreapp3.1\Sysmanager.API.Admin.runtimeconfig.dev.json
+D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\bin\Debug\netcoreapp3.1\Sysmanager.API.Admin.dll
+D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\bin\Debug\netcoreapp3.1\Sysmanager.API.Admin.pdb
+D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\obj\Debug\netcoreapp3.1\Sysmanager.API.Admin.csproj.AssemblyReference.cache
+D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\obj\Debug\netcoreapp3.1\Sysmanager.API.Admin.GeneratedMSBuildEditorConfig.editorconfig
+D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\obj\Debug\netcoreapp3.1\Sysmanager.API.Admin.AssemblyInfoInputs.cache
+D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\obj\Debug\netcoreapp3.1\Sysmanager.API.Admin.AssemblyInfo.cs
+D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\obj\Debug\netcoreapp3.1\Sysmanager.API.Admin.csproj.CoreCompileInputs.cache
+D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\obj\Debug\netcoreapp3.1\Sysmanager.API.Admin.dll
+D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\obj\Debug\netcoreapp3.1\Sysmanager.API.Admin.pdb
+D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\obj\Debug\netcoreapp3.1\Sysmanager.API.Admin.genruntimeconfig.cache
