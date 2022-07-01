@@ -3,8 +3,6 @@ using Sysmanager.Application.Contracts.Users.Request;
 using Sysmanager.Application.Helpers;
 using Sysmanager.Application.Services;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Sysmanager.API.Admin.Controllers
@@ -22,10 +20,21 @@ namespace Sysmanager.API.Admin.Controllers
         [HttpPost("create-account")]
         public async Task<IActionResult> Post([FromBody] UserPostRequest request)
         {
-            Console.WriteLine("Inicio do processo");
             var response = await _userService.PostAsync(request);
             return Utils.Convert(response);
         }
 
+        [HttpPost("recovery-account")]
+        public async Task<IActionResult> PutAsync([FromBody] UserPutRequest request)
+        {
+            var response = await _userService.PutAsync(request);
+            return Utils.Convert(response);
+        }
+
+        [HttpPost("login")]
+        public async Task<IActionResult> PostLogin(string obj)
+        {
+            return Utils.Convert(new ResultData(false));
+        }
     }
 }

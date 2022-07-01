@@ -4,7 +4,7 @@ using System;
 
 namespace Sysmanager.API.Admin
 {
-    internal class Program
+    public class Program
     {
         public static void Main(string[] args)
         {

@@ -12,12 +12,13 @@ namespace Sysmanager.Application.Contracts.Users.Request
         /// <summary>
         /// Propriedade que se refere ao nome do usuario
         /// </summary>
-        public String UserName{ get; set; }
+        public string UserName{ get; set; }
+        
 
         /// <summary>
         /// Propriedade que se refere ao email do usuario
         /// </summary>
-        public String Email { get; set; }
+        public string Email { get; set; }
 
         /// <summary>
         /// Propriedade que se refere a senha do usuario

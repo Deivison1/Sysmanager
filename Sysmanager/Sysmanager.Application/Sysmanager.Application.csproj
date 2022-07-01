@@ -1,23 +1,30 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <ApplicationIcon />
+    <StartupObject />
   </PropertyGroup>
 
 	<ItemGroup>
+		<PackageReference Include="FluentValidation" Version="11.1.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.0.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
+		<PackageReference Include="Dapper" Version="2.0.35" />
+		<PackageReference Include="MySql.Data" Version="8.0.25" />
 	</ItemGroup>
 
 	<ItemGroup>
     <Folder Include="Contracts\Products\Response\" />
     <Folder Include="Contracts\Products\Request\" />
     <Folder Include="Contracts\Users\Response\" />
-    <Folder Include="Data\Mysql\Entities\" />
-    <Folder Include="Data\Mysql\Repositories\" />
-    <Folder Include="Errors\" />
-    <Folder Include="Validators\" />
   </ItemGroup>
+
+	<ItemGroup>
+	  <None Update="appsettings.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
 
 </Project>
