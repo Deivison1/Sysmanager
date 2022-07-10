@@ -4,23 +4,21 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Net;
-
+using System.Text;
 
 namespace Sysmanager.Application.Helpers
 {
     public static class Utils
     {
-        public static ResultData<T> SuccessData<T>(T _data)
+        public static ResultData SuccessData(object _data)
         {
-            var result = new ResultData<T>(_data);
-            result.Success = true;
+            var result = new ResultData(_data, true);
             return result;
         }
 
-        public static ResultData<T> ErrorData<T>(T _data)
+        public static ResultData ErrorData (object _data)
         {
-            var result = new ResultData<T>(_data);
-            result.Success = false;
+            var result = new ResultData(_data, false);
             return result;
         }
 
@@ -48,6 +46,17 @@ namespace Sysmanager.Application.Helpers
         public static string Description(this Enum valorEnum)
         {
             return valorEnum.GetAttribute<DescriptionAttribute>().Description;
+        }
+
+        public static string GetDateExpired(int value)
+        {
+            var date = DateTime.Now.AddMinutes(value);
+            return date.ToString("yyyyMMddHHmmss");
+        }
+
+        public static string ToBase64Encode(this string data)
+        {
+            return System.Convert.ToBase64String(Encoding.UTF8.GetBytes(data));
         }
     }
 }

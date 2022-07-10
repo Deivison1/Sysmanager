@@ -81,5 +81,15 @@ namespace Sysmanager.Application.Data.Mysql.Repositories
             var _sql = @$"UPDATE user set active = false where id = '{id}'";
             return new UserEntity();
         }
+
+        public async Task<UserEntity> GetUserByCredentialsAsync(string email, string password)
+        {
+            string strQuery = @$"select id, userName, email, password, active from user where email = '{email}' and password = '{password}' and active = 1 limit 1";
+            using (var cnx = _context.Connection())
+            {
+                var result = await cnx.QueryFirstOrDefaultAsync<UserEntity>(strQuery);
+                return result;
+            }
+        }
     }
 }

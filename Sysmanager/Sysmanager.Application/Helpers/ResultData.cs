@@ -6,21 +6,14 @@ namespace Sysmanager.Application.Helpers
 {
     public class ResultData
     {
-         
-        public ResultData(bool _succes)
+        public ResultData(object _data, bool _success)
         {
-            this.Success = _succes;
-        }
-        public bool Success { get; set; }
-    }
-
-    public class ResultData<T> : ResultData
-    {
-        public ResultData(T _data) : base(true)
-        {
+            this.Success = _success;
             this.Data = _data;
         }
-        public T Data { get; set; }
+        public bool Success { get; set; }
+        public object Data { get; set; }
     }
+
 }
 

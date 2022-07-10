@@ -5,6 +5,7 @@ using Sysmanager.Application.Services;
 using System;
 using System.Threading.Tasks;
 
+
 namespace Sysmanager.API.Admin.Controllers
 {
     [Route("api/v{version:apiVersion}/[controller]")]
@@ -32,9 +33,10 @@ namespace Sysmanager.API.Admin.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> PostLogin(string obj)
+        public async Task<IActionResult> PostLogin([FromBody] UserPostLoginRequest request)
         {
-            return Utils.Convert(new ResultData(false));
+            var response = await _userService.PostLoginAsync(request);
+            return Utils.Convert(response);
         }
     }
 }

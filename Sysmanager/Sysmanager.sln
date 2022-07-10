@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sysmanager.Application", "Sysmanager.Application\Sysmanager.Application.csproj", "{51AD386D-2B0D-4F60-BDBB-CAFE14E2E3DF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Items", "Items", "{8D57CAA1-BE94-4191-A21E-7C30D1E6578B}"
+	ProjectSection(SolutionItems) = preProject
+		CreatedDataBase.sql = CreatedDataBase.sql
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sysmanager.API.Admin", "Sysmanager.API.Admin\Sysmanager.API.Admin.csproj", "{17E42BF0-E5D1-447A-BEE7-E4411A31386C}"
 EndProject
