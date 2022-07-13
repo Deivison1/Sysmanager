@@ -1,11 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Sysmanager.Application.Contracts.Products.Request;
+using Sysmanager.Application.Contracts.Product.Request;
 using Sysmanager.Application.Helpers;
 using Sysmanager.Application.Services;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Sysmanager.API.Admin.Controllers.v1
@@ -57,4 +55,3 @@ namespace Sysmanager.API.Admin.Controllers.v1
         }
     }
 }
-

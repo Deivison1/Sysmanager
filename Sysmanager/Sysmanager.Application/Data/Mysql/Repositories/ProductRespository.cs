@@ -4,11 +4,12 @@ using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
 using Sysmanager.Application.Contracts;
+using Sysmanager.Application.Data.MySql.Entities;
 using Sysmanager.Application.Helpers;
-using Sysmanager.Application.Data.Mysql.Entities;
-using Sysmanager.Application.Contracts.Products.Request;
+using Sysmanager.Application.Contracts.Product.Request;
+using Sysmanager.Application.Data.Mysql;
 
-namespace Sysmanager.Application.Data.Mysql.Repositories
+namespace Sysmanager.Application.Data.MySql.Repositories
 {
     public class ProductRepository
     {
@@ -141,5 +142,4 @@ namespace Sysmanager.Application.Data.Mysql.Repositories
 
 
     }
-}   
-
+}

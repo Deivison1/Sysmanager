@@ -1,13 +1,12 @@
-﻿using Sysmanager.Application.Contracts.ProductType;
+﻿using FluentValidation;
 using Sysmanager.Application.Contracts.ProductType.Request;
-using Sysmanager.Application.Data.Mysql.Entities;
-using Sysmanager.Application.Data.Mysql.Repositories;
+using Sysmanager.Application.Data.MySql.Entities;
+using Sysmanager.Application.Data.MySql.Repositories;
 using Sysmanager.Application.Errors;
 using Sysmanager.Application.Helpers;
 using Sysmanager.Application.Validators.ProductType;
+using Sysmanager.Application.Validators.Unity;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Sysmanager.Application.Services
@@ -68,6 +67,7 @@ namespace Sysmanager.Application.Services
             var response = await _productTypeRepository.DeleteAsync(id);
             return Utils.SuccessData(response);
         }
+
 
     }
 }

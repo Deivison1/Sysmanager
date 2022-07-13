@@ -1,11 +1,10 @@
-﻿using Sysmanager.Application.Contracts.ProductType;
+﻿using Sysmanager.Application.Contracts.ProductType.Request;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
-namespace Sysmanager.Application.Data.Mysql.Entities
+namespace Sysmanager.Application.Data.MySql.Entities
 {
     [Table("unity")]
     public class ProductTypeEntity

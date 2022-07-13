@@ -1,16 +1,14 @@
 ﻿using FluentValidation;
 using Sysmanager.Application.Contracts.Category.Request;
-using Sysmanager.Application.Data.Mysql.Repositories;
+using Sysmanager.Application.Data.MySql.Repositories;
 using Sysmanager.Application.Errors;
 using Sysmanager.Application.Helpers;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Sysmanager.Application.Validators.Category
 {
     public class CategoryPostRequestValidator : AbstractValidator<CategoryPostRequest>
     {
+
         public CategoryPostRequestValidator(CategoryRepository repository)
         {
             RuleFor(contract => contract.Name)

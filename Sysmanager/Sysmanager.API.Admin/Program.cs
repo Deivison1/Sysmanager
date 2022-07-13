@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-using System;
 
 namespace Sysmanager.API.Admin
 {
@@ -15,4 +14,5 @@ namespace Sysmanager.API.Admin
             return WebHost.CreateDefaultBuilder(args).UseStartup<Startup>();
         }
     }
+
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sysmanager.Application.Contracts.ProductType
+namespace Sysmanager.Application.Contracts.ProductType.Request
 {
     public class ProductTypePutRequest
     {

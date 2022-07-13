@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sysmanager.Application.Contracts.Products.Request
+namespace Sysmanager.Application.Contracts.Product.Request
 {
     public class ProductPostRequest
     {
@@ -23,6 +23,5 @@ namespace Sysmanager.Application.Contracts.Products.Request
         public decimal Price { get; set; }
 
         public bool Active { get; set; }
-
     }
 }

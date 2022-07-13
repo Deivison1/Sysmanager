@@ -5,12 +5,10 @@ using Sysmanager.Application.Services;
 using System;
 using System.Threading.Tasks;
 
-
-namespace Sysmanager.API.Admin.Controllers
+namespace Sysmanager.API.Admin.Controllers.v1
 {
-    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiVersion("1.0")]
-
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class AccountController
     {
         private readonly UserService _userService;

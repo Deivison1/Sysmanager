@@ -4,14 +4,16 @@ using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
 using Sysmanager.Application.Contracts;
+using Sysmanager.Application.Data.MySql.Entities;
 using Sysmanager.Application.Contracts.Category.Request;
 using Sysmanager.Application.Helpers;
-using Sysmanager.Application.Data.Mysql.Entities;
+using Sysmanager.Application.Data.Mysql;
 
-namespace Sysmanager.Application.Data.Mysql.Repositories
+namespace Sysmanager.Application.Data.MySql.Repositories
 {
     public class CategoryRepository
     {
+
         private readonly MySqlContext _context;
 
         public CategoryRepository(MySqlContext ctt)
@@ -122,5 +124,7 @@ namespace Sysmanager.Application.Data.Mysql.Repositories
 
             }
         }
+
+
     }
 }

@@ -1,21 +1,20 @@
 ﻿using FluentValidation;
-using Sysmanager.Application.Contracts.Products.Request;
+using Sysmanager.Application.Contracts.Product.Request;
 using Sysmanager.Application.Data.Mysql.Repositories;
+using Sysmanager.Application.Data.MySql.Repositories;
 using Sysmanager.Application.Errors;
 using Sysmanager.Application.Helpers;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Sysmanager.Application.Validators.Product
 {
     public class ProductPutRequestValidator : AbstractValidator<ProductPutRequest>
     {
         public ProductPutRequestValidator(ProductRepository repository,
-                                        ProductTypeRepository productTypeRepository,
-                                        CategoryRepository categoryRepository,
-                                        UnityRepository unityRepository
-                                        )
+                                          ProductTypeRepository productTypeRepository,
+                                          CategoryRepository categoryRepository,
+                                          UnityRepository unityRepository
+                                          )
         {
 
             RuleFor(product => product.Id)

@@ -1,11 +1,8 @@
 ﻿using FluentValidation;
 using Sysmanager.Application.Contracts.Category.Request;
-using Sysmanager.Application.Data.Mysql.Repositories;
+using Sysmanager.Application.Data.MySql.Repositories;
 using Sysmanager.Application.Errors;
 using Sysmanager.Application.Helpers;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Sysmanager.Application.Validators.Category
 {

@@ -1,11 +1,11 @@
-﻿using Sysmanager.Application.Contracts.Category.Request;
-using Sysmanager.Application.Data.Mysql.Entities;
-using Sysmanager.Application.Data.Mysql.Repositories;
+﻿
+using Sysmanager.Application.Contracts.Category.Request;
+using Sysmanager.Application.Data.MySql.Entities;
+using Sysmanager.Application.Data.MySql.Repositories;
 using Sysmanager.Application.Errors;
 using Sysmanager.Application.Helpers;
+using Sysmanager.Application.Validators.Category;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Sysmanager.Application.Services
@@ -66,6 +66,7 @@ namespace Sysmanager.Application.Services
             var response = await _categoryRepository.DeleteAsync(id);
             return Utils.SuccessData(response);
         }
+
 
     }
 }

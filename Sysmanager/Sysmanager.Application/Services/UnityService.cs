@@ -1,5 +1,4 @@
 ﻿using Sysmanager.Application.Contracts.Unity.Request;
-using Sysmanager.Application.Data.Mysql;
 using Sysmanager.Application.Data.Mysql.Entities;
 using Sysmanager.Application.Data.Mysql.Repositories;
 using Sysmanager.Application.Errors;

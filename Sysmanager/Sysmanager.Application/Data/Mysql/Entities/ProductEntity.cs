@@ -1,9 +1,12 @@
-﻿using Sysmanager.Application.Contracts.Products.Request;
+﻿
+using Sysmanager.Application.Contracts.Product.Request;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text;
 
-namespace Sysmanager.Application.Data.Mysql.Entities
+namespace Sysmanager.Application.Data.MySql.Entities
 {
     [Table("product")]
     public class ProductEntity
@@ -76,10 +79,8 @@ namespace Sysmanager.Application.Data.Mysql.Entities
 
     }
 }
-        
-    
-            
-    
 
 
- 
+
+
+
