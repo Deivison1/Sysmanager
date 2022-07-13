@@ -17,8 +17,8 @@ namespace Sysmanager.Application.Data.Mysql.Entities
         }
         public UnityEntity()
         {
-                
         }
+
         public UnityEntity(UnityPutRequest request)
         {
             this.Id = request.Id;
