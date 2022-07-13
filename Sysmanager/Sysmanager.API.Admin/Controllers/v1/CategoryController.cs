@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Sysmanager.Application.Contracts.Category.Request;
 using Sysmanager.Application.Helpers;
 using Sysmanager.Application.Services;
@@ -9,6 +10,9 @@ using System.Threading.Tasks;
 
 namespace Sysmanager.API.Admin.Controllers.v1
 {
+    [Authorize]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class CategoryController
     {
         private readonly CategoryService _categoryService;
