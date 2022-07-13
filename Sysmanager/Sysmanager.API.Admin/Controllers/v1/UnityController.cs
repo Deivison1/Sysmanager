@@ -10,13 +10,11 @@ using System.Threading.Tasks;
 namespace Sysmanager.API.Admin.Controllers.v1
 {
     [Authorize]
-    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiVersion("1.0")]
-
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class UnityController
     {
         private readonly UnityService _unityService;
-
         public UnityController(UnityService service)
         {
             this._unityService = service;
@@ -29,18 +27,17 @@ namespace Sysmanager.API.Admin.Controllers.v1
             return Utils.Convert(response);
         }
 
-       
-        [HttpGet("id/{id}")]
-        public async Task<IActionResult> GetById([FromRoute] Guid id)
-        {
-            var response = await _unityService.GetByIdAsync(id);
-            return Utils.Convert(response);
-        }
-
         [HttpPut("update")]
         public async Task<IActionResult> Put([FromBody] UnityPutRequest request)
         {
             var response = await _unityService.PutAsync(request);
+            return Utils.Convert(response);
+        }
+
+        [HttpGet("id/{id}")]
+        public async Task<IActionResult> GetById([FromRoute] Guid id)
+        {
+            var response = await _unityService.GetByIdAsync(id);
             return Utils.Convert(response);
         }
 
@@ -57,6 +54,7 @@ namespace Sysmanager.API.Admin.Controllers.v1
             var response = await _unityService.DeleteByIdAsync(id);
             return Utils.Convert(response);
         }
+
     }
 }
 
