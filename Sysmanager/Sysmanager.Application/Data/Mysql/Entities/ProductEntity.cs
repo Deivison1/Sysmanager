@@ -5,42 +5,45 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Sysmanager.Application.Data.Mysql.Entities
 {
+    [Table("product")]
     public class ProductEntity
     {
-        public ProductEntity(ProductPostRequest request)
-        {
-            this.Id            = Guid.NewGuid();
-            this.Name          = request.Name;
-            this.ProductCode   = request.ProductCode;
-            this.ProductTypeId = request.ProductTypeId;
-            this.categoryId    = request.categoryId;
-            this.UnityId       = request.UnityId;
-            this.costPrice     = request.costPrice;
-            this.Percentage    = request.Percentage;
-            this.Price         = request.Price;
-            this.Active        = request.Active;
 
+        public ProductEntity(ProductPostRequest product)
+        {
+            this.Id = Guid.NewGuid();
+            this.Name = product.Name;
+            this.ProductCode = product.ProductCode;
+            this.ProductTypeId = product.ProductTypeId;
+            this.CategoryId = product.CategoryId;
+            this.UnityId = product.UnityId;
+            this.CostPrice = product.CostPrice;
+            this.Percentage = product.Percentage;
+            this.Price = product.Price;
+            this.Active = product.Active;
         }
+
+        public ProductEntity(ProductPutRequest product)
+        {
+            this.Id = product.Id;
+            this.Name = product.Name;
+            this.ProductCode = product.ProductCode;
+            this.ProductTypeId = product.ProductTypeId;
+            this.CategoryId = product.CategoryId;
+            this.UnityId = product.UnityId;
+            this.CostPrice = product.CostPrice;
+            this.Percentage = product.Percentage;
+            this.Price = product.Price;
+            this.Active = product.Active;
+        }
+
         public ProductEntity()
         {
 
         }
-        public ProductEntity(ProductPutRequest request)
-        {
-            this.Id            = request.Id;
-            this.Name          = request.Name;
-            this.ProductCode   = request.ProductCode;
-            this.ProductTypeId = request.ProductTypeId;
-            this.categoryId    = request.categoryId;
-            this.UnityId       = request.UnityId;
-            this.costPrice     = request.costPrice;
-            this.Percentage    = request.Percentage;
-            this.Price         = request.Price;
-            this.Active        = request.Active;
-        }
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
-        [Column("id")]
 
+
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column("id")]
         public Guid Id { get; set; }
 
@@ -54,22 +57,23 @@ namespace Sysmanager.Application.Data.Mysql.Entities
         public string ProductTypeId { get; set; }
 
         [Column("categoryId")]
-        public string categoryId { get; set; }
+        public string CategoryId { get; set; }
 
-        [Column("UnityId")]
+        [Column("unityId")]
         public string UnityId { get; set; }
 
-        [Column("CostPrice")]
-        public decimal costPrice { get; set; }
+        [Column("coastPrice")]
+        public decimal CostPrice { get; set; }
 
         [Column("percentage")]
         public decimal Percentage { get; set; }
 
-        [Column("price ")]
+        [Column("price")]
         public decimal Price { get; set; }
 
-        [Column("active ")]
+        [Column("active")]
         public bool Active { get; set; }
+
     }
 }
         
