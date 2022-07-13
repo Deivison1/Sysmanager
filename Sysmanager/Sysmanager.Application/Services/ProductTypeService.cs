@@ -1,8 +1,10 @@
 ﻿using Sysmanager.Application.Contracts.ProductType;
+using Sysmanager.Application.Contracts.ProductType.Request;
 using Sysmanager.Application.Data.Mysql.Entities;
 using Sysmanager.Application.Data.Mysql.Repositories;
 using Sysmanager.Application.Errors;
 using Sysmanager.Application.Helpers;
+using Sysmanager.Application.Validators.ProductType;
 using System;
 using System.Collections.Generic;
 using System.Text;

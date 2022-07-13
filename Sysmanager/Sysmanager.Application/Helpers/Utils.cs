@@ -58,5 +58,6 @@ namespace Sysmanager.Application.Helpers
         {
             return System.Convert.ToBase64String(Encoding.UTF8.GetBytes(data));
         }
+
     }
 }
