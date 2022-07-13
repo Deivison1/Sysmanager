@@ -15,8 +15,7 @@ namespace Sysmanager.Application.Helpers
             var result = new ResultData(_data, true);
             return result;
         }
-
-        public static ResultData ErrorData (object _data)
+        public static ResultData ErrorData(object _data)
         {
             var result = new ResultData(_data, false);
             return result;
@@ -29,6 +28,7 @@ namespace Sysmanager.Application.Helpers
 
             return new BadRequestObjectResult(_resultData);
         }
+
         public static List<string> ToErrorList(this IList<ValidationFailure> list)
         {
             var _result = new List<string>();

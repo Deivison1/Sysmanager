@@ -33,16 +33,18 @@ namespace Sysmanager.Application.Helpers
             var year = data.Substring(0, 4);
             var month = data.Substring(4, 2);
             var day = data.Substring(6, 2);
+
             var hour = data.Substring(8, 2);
             var minutes = data.Substring(10, 2);
             var seconds = data.Substring(12, 2);
-            var date = Convert.ToDateTime(year + '-' + month + '-' + day + ' ' + hour + ':' + minutes + ':' + seconds);
 
+            var date = Convert.ToDateTime(year + '-' + month + '-' + day + ' ' + hour + ':' + minutes + ':' + seconds);
             if (DateTime.Now > date)
                 return true;
 
             return false;
         }
+
         protected override async Task<AuthenticateResult> HandleAuthenticateAsync()
         {
             var endpoint = Context.GetEndpoint();
@@ -81,7 +83,6 @@ namespace Sysmanager.Application.Helpers
                     return AuthenticateResult.Fail("Invalid Username or Password");
 
                 user = await _userService.Authenticate(username, password);
-
             }
             catch
             {
