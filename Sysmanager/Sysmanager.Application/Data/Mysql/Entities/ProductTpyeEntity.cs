@@ -6,30 +6,38 @@ using System.Text;
 
 namespace Sysmanager.Application.Data.Mysql.Entities
 {
-    [Table("productType")]
-    public class ProductTpyeEntity
+    [Table("unity")]
+    public class ProductTypeEntity
     {
-        public ProductTpyeEntity(ProductTypePostRequest request)
-        {
-            this.Id     = Guid.NewGuid();
-            this.Name   = request.Name;
-            this.Active = request.Active;
-        }
-        public ProductTpyeEntity(ProductTypePutRequest request)
+
+        public ProductTypeEntity(ProductTypePostRequest unity)
         {
             this.Id = Guid.NewGuid();
-            this.newName = request.newName;
-            this.Active = request.Active;
+            this.Name = unity.Name;
+            this.Active = unity.Active;
         }
 
-        public Guid Id { get; }
+        public ProductTypeEntity(ProductTypePutRequest unity)
+        {
+            this.Id = unity.Id;
+            this.Name = unity.Name;
+            this.Active = unity.Active;
+        }
+
+        public ProductTypeEntity()
+        {
+
+        }
+
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Column("id")]
+        public Guid Id { get; set; }
+
         [Column("name")]
         public string Name { get; set; }
 
-        [Column("newname")]
-        public string newName { get; set; }
-
-        [Column("Active")]
+        [Column("active")]
         public bool Active { get; set; }
+
     }
 }
