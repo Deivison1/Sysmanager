@@ -16,7 +16,6 @@ namespace Sysmanager.Application.Services
     public class UserService
     {
         private readonly UserRepository _userRepository;
-
         public UserService(UserRepository userRepository)
         {
             this._userRepository = userRepository;
@@ -30,12 +29,11 @@ namespace Sysmanager.Application.Services
                 return Utils.ErrorData(validatorResult.Errors.ToErrorList());
 
             var entity = new UserEntity(request);
-
             var response = await _userRepository.CreateUser(entity);
             Console.WriteLine("Sucesso" + DateTime.Now + "\r\n");
-
             return Utils.SuccessData(response);
         }
+
         public async Task<ResultData> PutAsync(UserPutRequest request)
         {
             var existUser = await _userRepository.GetUserByUserNameAndEmail(request.UserName, request.Email);
@@ -47,7 +45,7 @@ namespace Sysmanager.Application.Services
                 if (!result.HasErrors)
                     return Utils.SuccessData(result);
 
-                return Utils.SuccessData(result);
+                return Utils.ErrorData(result);
             }
             return Utils.ErrorData(SysManagerErrors.User_Put_BadRequest_User_Not_Found.Description());
         }
@@ -58,11 +56,13 @@ namespace Sysmanager.Application.Services
             return response;
         }
 
+
         public async Task<ResultData> PostLoginAsync(UserPostLoginRequest user)
         {
             var openData = user.Email + ":" + user.Password + ":" + Utils.GetDateExpired(10);
             var dataBytes = Utils.ToBase64Encode(openData);
             var getuser = await _userRepository.GetUserByCredentialsAsync(user.Email, user.Password);
+
             if (getuser != null)
             {
                 var response = new AccountResponse {
@@ -72,7 +72,9 @@ namespace Sysmanager.Application.Services
                 };
                 return Utils.SuccessData(response);
             }
+
             return Utils.ErrorData(new AccountResponse { Message = "Token Fail" });
         }
+
     }
 }
