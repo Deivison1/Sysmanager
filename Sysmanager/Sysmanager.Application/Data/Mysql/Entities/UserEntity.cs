@@ -6,12 +6,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Sysmanager.Application.Data.Mysql.Entities
 {
+    [Table("user")]
     public class UserEntity
     {
-        public UserEntity()
-        {
-        }
-
         public UserEntity(UserPostRequest user)
         {
             this.Id = Guid.NewGuid();
@@ -21,6 +18,7 @@ namespace Sysmanager.Application.Data.Mysql.Entities
             this.Active = true;
         }
 
+        public UserEntity() { }
 
         [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column("id")]
