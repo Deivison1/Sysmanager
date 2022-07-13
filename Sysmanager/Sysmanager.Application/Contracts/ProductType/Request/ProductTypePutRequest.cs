@@ -6,8 +6,8 @@ namespace Sysmanager.Application.Contracts.ProductType
 {
     public class ProductTypePutRequest
     {
-        public string newName { get; set; }
-
+        public Guid Id { get; set; }
+        public string Name { get; set; }
         public bool Active { get; set; }
     }
 }

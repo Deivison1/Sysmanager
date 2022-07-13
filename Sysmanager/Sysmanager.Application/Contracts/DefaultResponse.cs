@@ -12,9 +12,9 @@ namespace Sysmanager.Application.Contracts
             this.Message = message;
             this.HasErrors = hasErrors;
         }
+
         public string Id { get; set; }
         public string Message { get; set; }
         public bool HasErrors { get; set; }
-
     }
 }
