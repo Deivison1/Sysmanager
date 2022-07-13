@@ -18,6 +18,7 @@ namespace Sysmanager.API.Admin.Controllers
         {
             this._userService = service;
         }
+
         [HttpPost("create-account")]
         public async Task<IActionResult> Post([FromBody] UserPostRequest request)
         {
@@ -25,8 +26,8 @@ namespace Sysmanager.API.Admin.Controllers
             return Utils.Convert(response);
         }
 
-        [HttpPost("recovery-account")]
-        public async Task<IActionResult> PutAsync([FromBody] UserPutRequest request)
+        [HttpPut("recovery-account")]
+        public async Task<IActionResult> Put([FromBody] UserPutRequest request)
         {
             var response = await _userService.PutAsync(request);
             return Utils.Convert(response);
