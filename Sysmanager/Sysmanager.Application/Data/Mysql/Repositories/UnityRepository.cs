@@ -18,9 +18,9 @@ namespace Sysmanager.Application.Data.Mysql.Repositories
         {
             this._context = context;
         }
+
         public async Task<DefaultResponse> CreateAsync(UnityEntity entity)
         {
-
             var _sql = $"INSERT INTO unity(id, name, active) VALUE('{entity.Id}', '{entity.Name}', {entity.Active})";
             using (var cnx = _context.Connection())
             {
@@ -28,27 +28,23 @@ namespace Sysmanager.Application.Data.Mysql.Repositories
                 if (result > 0)
                     return new DefaultResponse(entity.Id.ToString(), "Unidade de medida criada com sucesso", false);
             }
-
             return new DefaultResponse(entity.Id.ToString(), "Falha ao tentar cadastrar um unidade de medida", true);
         }
         public async Task<DefaultResponse> UpdateAsync(UnityEntity entity)
         {
-
-            var _sql = $"UPDATE unity set nama = '{entity.Name}', active = ('{entity.Active}' WHERE id ='{entity.Name}', {entity.Id})";
+            var _sql = $"UPDATE unity set name = '{entity.Name}', active = {entity.Active} WHERE id = '{entity.Id}'";
             using (var cnx = _context.Connection())
             {
                 var result = await cnx.ExecuteAsync(_sql);
                 if (result > 0)
                     return new DefaultResponse(entity.Id.ToString(), "Unidade de medida alterada com sucesso", false);
             }
-
-            return new DefaultResponse(entity.Id.ToString(), "Falha ao tentar alterar a unidade de medida", true);
-
+            return new DefaultResponse(entity.Id.ToString(), "Falha ao tentar alterar um unidade de medida", true);
         }
-
         public async Task<UnityEntity> GetByIdAsync(Guid id)
         {
-            var _sql = $"SELECT id, name, active from unity WHERE id = '{id}' limit 1";
+            var _sql = $"SELECT id, name, active from unity WHERE id = '{id}' and active = true limit 1";
+
             using (var cnx = _context.Connection())
             {
                 var result = await cnx.QueryFirstOrDefaultAsync<UnityEntity>(_sql);
@@ -58,27 +54,24 @@ namespace Sysmanager.Application.Data.Mysql.Repositories
 
         public async Task<UnityEntity> GetByNameAsync(string name)
         {
-            var _sql = $"SELECT id, name, active from unity WHERE id = '{name}' limit 1";
+            var _sql = $"SELECT id, name, active from unity WHERE name = '{name}' limit 1";
             using (var cnx = _context.Connection())
             {
                 var result = await cnx.QueryFirstOrDefaultAsync<UnityEntity>(_sql);
                 return result;
             }
         }
-
         public async Task<DefaultResponse> DeleteByIdAsync(Guid id)
         {
-            var _sql = $"DELETE from WHERE id = '{id}'";
+            var _sql = $"DELETE from unity WHERE id = '{id}'";
             using (var cnx = _context.Connection())
             {
                 var result = await cnx.ExecuteAsync(_sql);
                 if (result > 0)
-                    return new DefaultResponse(id.ToString(), "Unida de de medida excluida com sucesso!", true);
+                    return new DefaultResponse(id.ToString(), "Unidade de medida excluída com sucesso", false);
             }
-
-            return new DefaultResponse(id.ToString(), "Falha ao tentar exlcuir uma unidade de medida", true);
+            return new DefaultResponse(id.ToString(), "Falha ao tentar excluir uma unidade de medida", true);
         }
-
 
         public async Task<PaginationResponse<UnityEntity>> GetByFilterAsync(UnityGetFilterRequest filter)
         {
@@ -87,6 +80,7 @@ namespace Sysmanager.Application.Data.Mysql.Repositories
 
             if (!string.IsNullOrEmpty(filter.Name))
                 _where.Append($" AND name like '%{filter.Name}%'");
+
             if (filter.Active.ToLower() != "todos")
             {
                 string _activeFilter = "";
@@ -98,10 +92,12 @@ namespace Sysmanager.Application.Data.Mysql.Repositories
 
                 _where.Append(_activeFilter);
             }
+
             _sql.Append(_where);
 
             if (filter.page > 0 && filter.pageSize > 0)
                 _sql.Append($" limit {filter.pageSize * (filter.page - 1)}, {filter.pageSize}");
+
             using (var cnx = _context.Connection())
             {
                 var result = await cnx.QueryAsync<UnityEntity>(_sql.ToString());
@@ -110,7 +106,6 @@ namespace Sysmanager.Application.Data.Mysql.Repositories
                     _page = filter.page,
                     _pageSize = filter.pageSize,
                     _total = resultCount.FirstOrDefault(),
-
                     Items = result.ToArray()
                 };
             }
