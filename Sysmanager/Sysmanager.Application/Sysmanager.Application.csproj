@@ -16,7 +16,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-    <Folder Include="Contracts\Category\" />
     <Folder Include="Contracts\Products\Response\" />
     <Folder Include="Contracts\Users\Response\" />
   </ItemGroup>
