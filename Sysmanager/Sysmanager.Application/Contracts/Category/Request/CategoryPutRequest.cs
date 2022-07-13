@@ -4,7 +4,14 @@ using System.Text;
 
 namespace Sysmanager.Application.Contracts.Category.Request
 {
-    class public_class_CategoryPutRequest
+    public class CategoryPutRequest
     {
+        public Guid Id { get; set; }
+
+        public string Name { get; set; }
+
+        public Guid ParentId { get; set; }
+
+        public bool Active { get; set; }
     }
 }

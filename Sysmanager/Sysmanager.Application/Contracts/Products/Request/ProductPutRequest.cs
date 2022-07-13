@@ -14,11 +14,11 @@ namespace Sysmanager.Application.Contracts.Products.Request
 
         public string ProductTypeId { get; set; }
 
-        public string categoryId { get; set; }
+        public string CategoryId { get; set; }
 
         public string UnityId { get; set; }
 
-        public decimal costPrice { get; set; }
+        public decimal CostPrice { get; set; }
 
         public decimal Percentage { get; set; }
 
