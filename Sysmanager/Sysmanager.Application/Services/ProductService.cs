@@ -10,7 +10,9 @@ namespace Sysmanager.Application.Services
     public class ProductService
     {
         private readonly ProductRepository _productRepository;
-
+        private readonly ProductTypeRepositoty _productTypeRepositoty;
+        private readonly CategoryRepository _categoryRepository;
+        private readonly UnityRepository _unityRepository;
         public ProductService(ProductRepository unityRepository)
         {
             this._productRepository = unityRepository;
