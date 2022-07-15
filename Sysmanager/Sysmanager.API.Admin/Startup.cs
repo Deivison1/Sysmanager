@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Sysmanager.Application.Data.Mysql;
 using Sysmanager.Application.Data.Mysql.Repositories;
+using Sysmanager.Application.Data.MySql.Repositories;
 using Sysmanager.Application.Helpers;
 using Sysmanager.Application.Services;
 using System.Globalization;

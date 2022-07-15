@@ -21,7 +21,7 @@ namespace Sysmanager.Application.Validators.Category
 
             RuleFor(contract => contract.Name)
                 .Must(name => {
-                    var exists = repository.GetUnityByNameAsync(name);
+                    var exists = repository.GetCategoryByNameAsync(name);
                     return exists != null;
                 })
                 .WithMessage(SysManagerErrors.Category_Post_BadRequest_Name_Cannot_Be_Duplicated.Description());

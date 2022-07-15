@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Sysmanager.Application.Data.MySql.Entities
 {
-    [Table("unity")]
+    [Table("productType")]
     public class ProductTypeEntity
     {
 

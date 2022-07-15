@@ -10,7 +10,6 @@ namespace Sysmanager.Application.Helpers
         /// tamanho da minha pagina
         /// </summary>
         public int _pageSize { get; set; }
-
         /// <summary>
         /// pagina atual
         /// </summary>
@@ -19,7 +18,6 @@ namespace Sysmanager.Application.Helpers
         ///  total de registros da pesquisa
         /// </summary>
         public int _total { get; set; }
-
         /// <summary>
         /// Lista de items resultado da pesquisa paginada
         /// </summary>

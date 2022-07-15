@@ -110,6 +110,7 @@ namespace Sysmanager.Application.Data.Mysql.Repositories
                 };
             }
         }
+
     }
 }
 

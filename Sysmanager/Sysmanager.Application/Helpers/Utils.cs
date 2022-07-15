@@ -1,5 +1,6 @@
 ﻿using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
+using Sysmanager.Application.Contracts;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +11,14 @@ namespace Sysmanager.Application.Helpers
 {
     public static class Utils
     {
+        public static ResultData SuccessData(DefaultResponse _data)
+        {
+            bool _error = _data.HasErrors == false ? true : false;
+
+            var result = new ResultData(_data, _error);
+            return result;
+        }
+
         public static ResultData SuccessData(object _data)
         {
             var result = new ResultData(_data, true);

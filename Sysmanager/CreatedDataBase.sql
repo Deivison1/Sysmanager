@@ -1,12 +1,10 @@
--- Banco de dados sysmanager
--- ------------------------------
+
 CREATE SCHEMA IF NOT EXISTS sysmanager;
 
--- marcar banco de dados para uso
--- ------------------------------
-USE sysManager;
 
--- menha tabela de banco de dados
+USE sysmanager;
+
+
 -- ------------------------------
 CREATE TABLE IF NOT EXISTS sysmanager.user
 (
@@ -20,10 +18,8 @@ CREATE TABLE IF NOT EXISTS sysmanager.user
  PRIMARY KEY(`id`)
 );
 
--- -----------------------------------------------------
--- Table `sysmanager`.`unity`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS sysManager.unity (
+
+CREATE TABLE IF NOT EXISTS sysmanager.unity (
   `id` CHAR(36) not null default 'uuid()' comment 'Identificador do registro',
   `name` varchar(100) not null comment 'Nome do Unidade de produto',
   `active` bit NOT NULL default false comment 'Ativo ou inativo',
@@ -32,9 +28,7 @@ CREATE TABLE IF NOT EXISTS sysManager.unity (
   PRIMARY KEY (`id`)
   );
 
--- ---------------------------
--- tabela de produtos
--- ---------------------------
+
 CREATE TABLE IF NOT EXISTS sysmanager.product
 (
 `id` char(36) NOT NULL DEFAULT 'uuid()' COMMENT 'Identificador unico do registro',
@@ -50,9 +44,9 @@ CREATE TABLE IF NOT EXISTS sysmanager.product
 `creationDate` DateTime NOT NULL DEFAULT NOW() COMMENT 'data de criação do registro',
 `updateDate` DateTime NULL COMMENT 'data de atualização do registro',
 PRIMARY KEY(`id`),
-CONSTRAINT `fk_producType` FOREIGN KEY (`productTypeId`) REFERENCES sysManager.productType(`id`),
-CONSTRAINT `fk_category` FOREIGN KEY (`categoryId`) REFERENCES sysManager.category(`id`),
-CONSTRAINT `fk_unity` FOREIGN KEY (`unityId`) REFERENCES sysManager.unity(`id`)
+CONSTRAINT `fk_producType` FOREIGN KEY (`productTypeId`) REFERENCES sysmanager.productType(`id`),
+CONSTRAINT `fk_category` FOREIGN KEY (`categoryId`) REFERENCES sysmanager.category(`id`),
+CONSTRAINT `fk_unity` FOREIGN KEY (`unityId`) REFERENCES sysmanager.unity(`id`)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
 );

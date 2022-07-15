@@ -19,7 +19,7 @@ namespace Sysmanager.Application.Validators.Category
                 .WithMessage(SysManagerErrors.Category_Post_BadRequest_Name_Cannot_Be_Null_Or_Empty.Description());
             RuleFor(contract => contract)
                 .Must(x => {
-                    var exists = repository.GetUnityByNameAsync(x.Name).Result;
+                    var exists = repository.GetCategoryByNameAsync(x.Name).Result;
 
                     if (exists != null)
                         if (exists.Id != x.Id)

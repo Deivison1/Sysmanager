@@ -65,7 +65,7 @@ namespace Sysmanager.Application.Data.MySql.Repositories
             return new DefaultResponse(id.ToString(), "Erro ao tentar excluír Categoria", true);
         }
 
-        public async Task<CategoryEntity> GetUnityByIdAsync(Guid id)
+        public async Task<CategoryEntity> GetCategoryByIdAsync(Guid id)
         {
             string strQuery = $"select id, name, active from category where id = '{id}' and active = true";
             using (var cnx = _context.Connection())
@@ -75,7 +75,7 @@ namespace Sysmanager.Application.Data.MySql.Repositories
             }
         }
 
-        public async Task<CategoryEntity> GetUnityByNameAsync(string name)
+        public async Task<CategoryEntity> GetCategoryByNameAsync(string name)
         {
             string strQuery = $"select id, name, active from category where name = '{name}' limit 1";
             using (var cnx = _context.Connection())
@@ -85,7 +85,7 @@ namespace Sysmanager.Application.Data.MySql.Repositories
             }
         }
 
-        public async Task<PaginationResponse<CategoryEntity>> GetUnityByFiltersync(CategoryGetFilterRequest filter)
+        public async Task<PaginationResponse<CategoryEntity>> GetCategoryByFiltersync(CategoryGetFilterRequest filter)
         {
             using (var cnx = _context.Connection())
             {

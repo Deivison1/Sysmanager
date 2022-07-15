@@ -35,10 +35,19 @@ namespace Sysmanager.Application.Data.MySql.Repositories
             }
             return new DefaultResponse("", "Erro ao tentar criar produto", true);
         }
-
         public async Task<DefaultResponse> UpdateAsync(ProductEntity entity)
         {
-            string strQuery = $"update product set name = '{entity.Name}', active = {entity.Active} where id = '{entity.Id}'";
+            string strQuery = $@"update product set name = '{entity.Name}', 
+                                                    active = {entity.Active},
+                                                    productCode = '{entity.ProductCode}', 
+                                                    productTypeId = '{entity.ProductTypeId}',
+                                                    categoryId = '{entity.CategoryId}',
+                                                    unityId = '{entity.UnityId}', 
+                                                    costPrice = {entity.CostPrice},
+                                                    percentage = {entity.Percentage},
+                                                    price = {entity.Price}
+                                                    where id = '{entity.Id}'";
+
             using (var cnx = _context.Connection())
             {
                 var result = await cnx.ExecuteAsync(strQuery);
@@ -46,6 +55,7 @@ namespace Sysmanager.Application.Data.MySql.Repositories
                 if (result > 0)
                     return new DefaultResponse(entity.Id.ToString(), "Produto alterado com sucesso", false);
             }
+
             return new DefaultResponse("", "Erro ao tentar alterada produto", true);
         }
 
@@ -143,3 +153,4 @@ namespace Sysmanager.Application.Data.MySql.Repositories
 
     }
 }
+

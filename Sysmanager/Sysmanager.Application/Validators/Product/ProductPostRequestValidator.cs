@@ -18,8 +18,8 @@ namespace Sysmanager.Application.Validators.Product
         {
 
             RuleFor(product => product.Name)
-                .Must(name => !string.IsNullOrEmpty(name))
-                .WithMessage(SysManagerErrors.Product_Post_BadRequest_Name_Cannot_Be_Null_Or_Empty.Description());
+                 .Must(name => !string.IsNullOrEmpty(name))
+                 .WithMessage(SysManagerErrors.Product_Post_BadRequest_Name_Cannot_Be_Null_Or_Empty.Description());
 
             RuleFor(product => product.CostPrice)
                 .Must(cost => cost > 0)
@@ -64,7 +64,7 @@ namespace Sysmanager.Application.Validators.Product
                             .Must(category => {
                                 try
                                 {
-                                    var exists = categoryRepository.GetUnityByIdAsync(Guid.Parse(category)).Result;
+                                    var exists = categoryRepository.GetCategoryByIdAsync(Guid.Parse(category)).Result;
                                     return exists != null;
                                 }
                                 catch (Exception)
@@ -88,6 +88,7 @@ namespace Sysmanager.Application.Validators.Product
                                 }
                             })
                             .WithMessage(SysManagerErrors.Product_Post_BadRequest_UnityId_Cannot_Be_Null_Empty_Or_Invalid.Description());
+
         }
     }
 }

@@ -18,7 +18,6 @@ namespace Sysmanager.Application.Contracts.Product.Request
         /// </summary>
         public int pageSize { get; set; }
 
-
     }
 }
 

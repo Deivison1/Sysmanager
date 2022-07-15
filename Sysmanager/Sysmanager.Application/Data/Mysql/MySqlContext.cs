@@ -4,8 +4,8 @@ using MySql.Data.MySqlClient;
 
 namespace Sysmanager.Application.Data.Mysql
 {
-     public class MySqlContext
-     {
+    public class MySqlContext
+    {
         private MySqlConnection connection;
         private readonly string connectionString = "";
 
@@ -21,6 +21,5 @@ namespace Sysmanager.Application.Data.Mysql
             connection.Open();
             return connection;
         }
-
-     }
+    }
 }

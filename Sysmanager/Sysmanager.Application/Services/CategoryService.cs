@@ -44,13 +44,13 @@ namespace Sysmanager.Application.Services
 
         public async Task<ResultData> GetFilterAsync(CategoryGetFilterRequest category)
         {
-            var response = await _categoryRepository.GetUnityByFiltersync(category);
+            var response = await _categoryRepository.GetCategoryByFiltersync(category);
             return Utils.SuccessData(response);
         }
 
         public async Task<ResultData> GetAsync(Guid id)
         {
-            var response = await _categoryRepository.GetUnityByIdAsync(id);
+            var response = await _categoryRepository.GetCategoryByIdAsync(id);
             if (response == null)
                 return Utils.ErrorData(SysManagerErrors.Unity_Put_BadRequest_Id_Is_Invalid_Or_Inexistent.Description());
 
@@ -59,7 +59,7 @@ namespace Sysmanager.Application.Services
 
         public async Task<ResultData> DeleteAsync(Guid id)
         {
-            var exists = await _categoryRepository.GetUnityByIdAsync(id);
+            var exists = await _categoryRepository.GetCategoryByIdAsync(id);
             if (exists == null)
                 return Utils.ErrorData(SysManagerErrors.Unity_Delete_BadRequest_Id_Is_Invalid_Or_Inexistent.Description());
 

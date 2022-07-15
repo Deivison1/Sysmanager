@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 namespace Sysmanager.Application.Data.Mysql.Repositories
 {
     public class UserRepository
-
     {
         private readonly MySqlContext _context;
 
