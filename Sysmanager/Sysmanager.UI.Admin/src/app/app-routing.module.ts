@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { RegisterComponent } from './components/account/register/register.component';
 import { DefaultLayoutComponent } from './containers';
 
 const routes: Routes = [
@@ -15,10 +16,21 @@ const routes: Routes = [
       title: 'Home'
     },
     children: [
+           {
+              path: 'account',
+              loadChildren: () =>
+              import('./components/account/account.module').then((n) => n.AccountModule)
+            }
 
     ]
   },
-  
+  {
+    path: 'register',
+    component: RegisterComponent,
+    data: {
+      title: 'Register Page'
+    }
+  }
   //{path: '**', redirectTo: 'dashboard'}
 ];
 
