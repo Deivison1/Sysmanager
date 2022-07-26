@@ -11,11 +11,16 @@ using Sysmanager.Application.Helpers;
 using Sysmanager.Application.Services;
 using System.Globalization;
 
+using Microsoft.Extensions.Configuration;
+
 namespace Sysmanager.API.Admin
 {
     public class Startup
     {
+
         public IConfiguration Configuration { get; set; }
+        readonly string CorsPolicy = "_corsPolicy";
+
         public void BeforeConfigureServices(IServiceCollection services)
         {
 
@@ -51,17 +56,30 @@ namespace Sysmanager.API.Admin
 
             services.AddMvc(options => {
                 options.EnableEndpointRouting = false;
+
+                services.AddCors(options =>
+                {
+                    options.AddPolicy(name: CorsPolicy,
+                                      builder => {
+                                          builder.AllowAnyOrigin()
+                                           .AllowAnyMethod()
+                                           .AllowAnyHeader();
+                                      });
+                });
             });
         }
+
+
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+
             var supportedCultures = new[] { new CultureInfo("en-US") };
             app.UseRequestLocalization(new RequestLocalizationOptions {
                 DefaultRequestCulture = new RequestCulture(culture: "en-US", uiCulture: "en-US"),
                 SupportedCultures = supportedCultures,
                 SupportedUICultures = supportedCultures
             });
-
+            app.UseCors(CorsPolicy);
             app.UseAuthentication();
             app.UseAuthorization();
             app.UseMvc();

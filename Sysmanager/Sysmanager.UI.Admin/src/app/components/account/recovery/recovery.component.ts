@@ -1,27 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import {AccountView} from '../models/account-view';
-import {AccountService} from 'src/app/services/account-service';
+import { AccountService } from './../../../services/account-service';
+import {AccountPutRequest} from '../models/account-put-request';
 
 @Component({
-    selector:'app-register',
-    templateUrl:'./register.component.html'
+    selector:'app-recovery',
+    templateUrl:'./recovery.component.html'
     })
     
-    export class RegisterComponent implements OnInit {
+    export class RecoveryComponent implements OnInit {
     
-        constructor(private route: ActivatedRoute,
-                    private router: Router,
-                    private accountService: AccountService
-                    ){}
-                    
-        ngOnInit(){
-        }
-    
-    
-        createAccount(){
-            
-            this.hideMessage();
+    constructor(private route: ActivatedRoute,
+            private router: Router,
+            private accountService: AccountService
+            ){}
+                
+    ngOnInit(){
+    }
+    recoveryAccount(){
+
+        this.hideMessage();
             var iUserName = (<HTMLInputElement>document.getElementById("username")).value;
             var iEmail = (<HTMLInputElement>document.getElementById("email")).value;
             var iPassword = (<HTMLInputElement>document.getElementById("password")).value;
@@ -58,9 +56,9 @@ import {AccountService} from 'src/app/services/account-service';
             }
             console.log('tudo certo, vamos preparar para chamar o backEnd');
     
-            const account = new AccountView(iUserName,iEmail,iPassword);
+            const account = new AccountPutRequest(iUserName,iEmail,iPassword);
     
-            this.accountService.createAccount(account).subscribe(
+            this.accountService.recoveryAccount(account).subscribe(
             (response:any) => {
                 console.log(`tudo certo: ${JSON.stringify(response)}`);
             }, error => {
@@ -80,6 +78,5 @@ import {AccountService} from 'src/app/services/account-service';
         var idvAlert = (<HTMLDivElement>document.getElementById("dvAlert"));
         idvAlert.innerHTML ='';
         colErrors.style.display = 'none';
-    }    
-}
-    
+    }
+} 

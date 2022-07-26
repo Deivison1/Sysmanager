@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RegisterComponent } from './components/account/register/register.component';
 import { DefaultLayoutComponent } from './containers';
+import {LoginComponent} from './components/account/login/login.component'
+import { RecoveryComponent } from './components/account/recovery/recovery.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -16,21 +18,43 @@ const routes: Routes = [
       title: 'Home'
     },
     children: [
-           {
-              path: 'account',
-              loadChildren: () =>
-              import('./components/account/account.module').then((n) => n.AccountModule)
-            }
-
+              {
+                path:'account',
+                loadChildren: () =>
+                import('./components/account/account.module').then((m) => m.AccountModule)
+              },
+              {
+                path:'dashboard',
+                loadChildren: () =>
+                import('./components/account/dashboard/dashboard.module').then((m) => m.DashboardModule)
+              }
+             
     ]
   },
   {
-    path: 'register',
+    path:'register',
     component: RegisterComponent,
-    data: {
-      title: 'Register Page'
+    data:{
+      title:'Register Page'
     }
-  }
+  },
+  {
+    path: 'recovery',
+    component: RecoveryComponent,
+    data:{
+      title: 'Recovery Page'
+    }
+  }, 
+  {
+    path:'login',
+    component: LoginComponent,
+    data:{
+      title:'login Page'
+    }
+  },
+   
+
+  
   //{path: '**', redirectTo: 'dashboard'}
 ];
 
