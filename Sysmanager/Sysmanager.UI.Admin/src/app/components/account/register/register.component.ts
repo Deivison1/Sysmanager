@@ -56,14 +56,18 @@ export class RegisterComponent implements OnInit {
             this.showMessage('Senhas invalidas, verifique...');
             return;
         }
-        console.log('tudo certo, vamos preparar para chamar o backEnd');
 
+        console.log('tudo certo, vamos preparar para chamar o backEnd');
         const account = new AccountView(iUserName,iEmail,iPassword);
 
-        this.accountService.createAccount(account).subscribe(
-        (response:any) => {
+        this.accountService.createAccount(account).subscribe((response:any) => 
+        {   
+            this.showMessage('Conta criada com sucesso!')
             console.log(`tudo certo: ${JSON.stringify(response)}`);
-        }, error => {
+
+        }, 
+        error => {
+            this.showMessage('OPA! Algo errado.')
             console.log(`tudo errado ${error}`);
         });
     }

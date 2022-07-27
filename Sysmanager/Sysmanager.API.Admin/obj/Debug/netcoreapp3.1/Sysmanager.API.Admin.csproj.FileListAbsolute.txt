@@ -1,9 +1,3 @@
-D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\obj\Debug\netcoreapp3.1\Sysmanager.API.Admin.csproj.AssemblyReference.cache
-D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\obj\Debug\netcoreapp3.1\Sysmanager.API.Admin.GeneratedMSBuildEditorConfig.editorconfig
-D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\obj\Debug\netcoreapp3.1\Sysmanager.API.Admin.AssemblyInfoInputs.cache
-D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\obj\Debug\netcoreapp3.1\Sysmanager.API.Admin.AssemblyInfo.cs
-D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\obj\Debug\netcoreapp3.1\Sysmanager.API.Admin.csproj.CoreCompileInputs.cache
-D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\obj\Debug\netcoreapp3.1\Sysmanager.API.Admin.MvcApplicationPartsAssemblyInfo.cache
 D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\bin\Debug\netcoreapp3.1\Sysmanager.API.Admin.exe
 D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\bin\Debug\netcoreapp3.1\appsettings.json
 D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\bin\Debug\netcoreapp3.1\Sysmanager.API.Admin.deps.json
@@ -13,6 +7,7 @@ D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\bin\Debug\netcoreapp3.1
 D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\bin\Debug\netcoreapp3.1\Sysmanager.API.Admin.pdb
 D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
 D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\bin\Debug\netcoreapp3.1\Dapper.dll
+D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\bin\Debug\netcoreapp3.1\FluentValidation.dll
 D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\bin\Debug\netcoreapp3.1\Google.Protobuf.dll
 D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\bin\Debug\netcoreapp3.1\K4os.Compression.LZ4.dll
 D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\bin\Debug\netcoreapp3.1\K4os.Compression.LZ4.Streams.dll
@@ -36,6 +31,13 @@ D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\bin\Debug\netcoreapp3.1
 D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\bin\Debug\netcoreapp3.1\Sysmanager.Application.dll
 D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\bin\Debug\netcoreapp3.1\Sysmanager.Application.pdb
+D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\obj\Debug\netcoreapp3.1\Sysmanager.API.Admin.csproj.AssemblyReference.cache
+D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\obj\Debug\netcoreapp3.1\Sysmanager.API.Admin.GeneratedMSBuildEditorConfig.editorconfig
+D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\obj\Debug\netcoreapp3.1\Sysmanager.API.Admin.AssemblyInfoInputs.cache
+D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\obj\Debug\netcoreapp3.1\Sysmanager.API.Admin.AssemblyInfo.cs
+D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\obj\Debug\netcoreapp3.1\Sysmanager.API.Admin.csproj.CoreCompileInputs.cache
+D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\obj\Debug\netcoreapp3.1\Sysmanager.API.Admin.MvcApplicationPartsAssemblyInfo.cs
+D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\obj\Debug\netcoreapp3.1\Sysmanager.API.Admin.MvcApplicationPartsAssemblyInfo.cache
 D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\obj\Debug\netcoreapp3.1\staticwebassets\Sysmanager.API.Admin.StaticWebAssets.Manifest.cache
 D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\obj\Debug\netcoreapp3.1\staticwebassets\Sysmanager.API.Admin.StaticWebAssets.xml
 D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\obj\Debug\netcoreapp3.1\scopedcss\bundle\Sysmanager.API.Admin.styles.css
@@ -44,5 +46,3 @@ D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\obj\Debug\netcoreapp3.1
 D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\obj\Debug\netcoreapp3.1\Sysmanager.API.Admin.dll
 D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\obj\Debug\netcoreapp3.1\Sysmanager.API.Admin.pdb
 D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\obj\Debug\netcoreapp3.1\Sysmanager.API.Admin.genruntimeconfig.cache
-D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\bin\Debug\netcoreapp3.1\FluentValidation.dll
-D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.API.Admin\obj\Debug\netcoreapp3.1\Sysmanager.API.Admin.MvcApplicationPartsAssemblyInfo.cs

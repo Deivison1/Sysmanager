@@ -1,11 +1,10 @@
-D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.Application\obj\Debug\netcoreapp3.1\Sysmanager.Application.csproj.AssemblyReference.cache
-D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.Application\obj\Debug\netcoreapp3.1\Sysmanager.Application.GeneratedMSBuildEditorConfig.editorconfig
-D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.Application\obj\Debug\netcoreapp3.1\Sysmanager.Application.AssemblyInfoInputs.cache
-D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.Application\obj\Debug\netcoreapp3.1\Sysmanager.Application.AssemblyInfo.cs
-D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.Application\obj\Debug\netcoreapp3.1\Sysmanager.Application.csproj.CoreCompileInputs.cache
 D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.Application\bin\Debug\netcoreapp3.1\appsettings.json
 D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.Application\bin\Debug\netcoreapp3.1\Sysmanager.Application.deps.json
 D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.Application\bin\Debug\netcoreapp3.1\Sysmanager.Application.dll
 D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.Application\bin\Debug\netcoreapp3.1\Sysmanager.Application.pdb
+D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.Application\obj\Debug\netcoreapp3.1\Sysmanager.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.Application\obj\Debug\netcoreapp3.1\Sysmanager.Application.AssemblyInfoInputs.cache
+D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.Application\obj\Debug\netcoreapp3.1\Sysmanager.Application.AssemblyInfo.cs
+D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.Application\obj\Debug\netcoreapp3.1\Sysmanager.Application.csproj.CoreCompileInputs.cache
 D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.Application\obj\Debug\netcoreapp3.1\Sysmanager.Application.dll
 D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.Application\obj\Debug\netcoreapp3.1\Sysmanager.Application.pdb
