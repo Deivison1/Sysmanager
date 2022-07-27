@@ -26,9 +26,8 @@ const routes: Routes = [
               {
                 path:'dashboard',
                 loadChildren: () =>
-                import('./components/account/dashboard/dashboard.module').then((m) => m.DashboardModule)
-              }
-             
+                import('./components/dashboard/dashboard.module').then((m) => m.DashboardModule)
+              }              
     ]
   },
   {
@@ -39,20 +38,19 @@ const routes: Routes = [
     }
   },
   {
-    path: 'recovery',
+    path:'recovery',
     component: RecoveryComponent,
     data:{
-      title: 'Recovery Page'
+      title:'recovery Page'
     }
-  }, 
+  },  
   {
     path:'login',
     component: LoginComponent,
     data:{
       title:'login Page'
     }
-  },
-   
+  }  
 
   
   //{path: '**', redirectTo: 'dashboard'}

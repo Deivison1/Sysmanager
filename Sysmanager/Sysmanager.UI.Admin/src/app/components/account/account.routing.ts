@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
+import { RecoveryComponent } from './recovery/recovery.component';
 import { RegisterComponent } from './register/register.component';
-import {RecoveryComponent} from './recovery/recovery.component'
 
 export const AccountRoutes: Routes = [
     {
@@ -14,6 +14,6 @@ export const AccountRoutes: Routes = [
     },
     {
       path: 'recovery',
-      component: RegisterComponent
-    }
+      component: RecoveryComponent,
+    },    
 ];

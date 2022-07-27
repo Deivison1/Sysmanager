@@ -24,7 +24,7 @@ returnUrl:string = '';
       labels: [''],
       datasets: [
         {
-          data: [1],
+          data: [],
           backgroundColor: [''],
           hoverBackgroundColor: ['']
         }
