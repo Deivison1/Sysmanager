@@ -28,6 +28,7 @@ import {
 import {IconModule} from '@coreui/icons-angular';
 //import { BarNavigatorModule } from '../bar-navigator/bar-navigator.module';
 import {NgxSpinnerModule} from 'ngx-spinner';
+import { CategoryService } from 'src/app/services/category-service';
 
 
 @NgModule({
@@ -54,7 +55,7 @@ import {NgxSpinnerModule} from 'ngx-spinner';
         ToastModule        
     ],
     providers:[
-        
+        CategoryService,
     ],
     declarations:[
         CategoryComponent,
