@@ -21,10 +21,21 @@ export class DefaultHeaderComponent extends HeaderComponent {
     super();
   }
 
-  ngOnInit() {
+ngOnInit() {
 
- }
+  var currenUser = localStorage.getItem('currentUser');
+  if (currenUser != null && currenUser != undefined)
+  {
+    var user = JSON.parse(currenUser);
+    this.activeUser = user["email"];
+  }
+  else
+    this.activeUser = '';
+}
 
-
-
+logout(){
+  localStorage.getItem('currentUser');
+  this.activeUser = '';
+  this.router.navigateByUrl('/login')
+  }
 }

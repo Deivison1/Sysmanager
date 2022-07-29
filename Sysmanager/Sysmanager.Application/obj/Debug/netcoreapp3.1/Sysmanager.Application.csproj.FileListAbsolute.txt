@@ -8,3 +8,4 @@ D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.Application\obj\Debug\netcoreapp3
 D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.Application\obj\Debug\netcoreapp3.1\Sysmanager.Application.csproj.CoreCompileInputs.cache
 D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.Application\obj\Debug\netcoreapp3.1\Sysmanager.Application.dll
 D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.Application\obj\Debug\netcoreapp3.1\Sysmanager.Application.pdb
+D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.Application\obj\Debug\netcoreapp3.1\Sysmanager.Application.csproj.AssemblyReference.cache
