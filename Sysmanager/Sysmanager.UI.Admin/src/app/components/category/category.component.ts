@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import {CategoryFilter} from './models/category-filter';
 import {CategoryService} from 'src/app/services/category-service'
 import { NgxSpinner, NgxSpinnerService } from 'ngx-spinner';
+import { PagerService } from 'src/app/services/page-service';
 
 @Component({
 selector:'app-category',
@@ -14,16 +15,21 @@ export class CategoryComponent implements OnInit {
 
     returnUrl: string ='';
     @Input() bodyDetailTodelete = '';
+    @Input() id: any = '';
+    public deleteId = '';
     public modalVisible = false;
     public pager: any = {};
     pagedItems: any[]=[];
     firstPage = 1;
+    itemsByPage = 5;
 
     constructor(private route: ActivatedRoute,
                 private router: Router,
                 private formbuilder: FormBuilder,
                 private categoryService: CategoryService,
-                private spinner: NgxSpinnerService
+                private spinner: NgxSpinnerService,
+                private pagerService: PagerService,
+                
                
                 ){
 
@@ -36,7 +42,7 @@ export class CategoryComponent implements OnInit {
     });
 
     ngOnInit(){
-
+        
     }
 
     confirmdelete(){
@@ -44,12 +50,15 @@ export class CategoryComponent implements OnInit {
     }
 
     canceldelete(){
-
+        this.modalVisible = false;
     }
     handleChangeModal(event:any){
 
     }
     prepareDelete(id:string, name:string){
+        this.deleteId = id;
+        this.bodyDetailTodelete =`Deseja realmente excluir o registro ${name} ?` ;
+        this.modalVisible = true;
 
     }
 
@@ -57,20 +66,22 @@ export class CategoryComponent implements OnInit {
 
     }
     redirectTo(url:string){
-        this.router.navigate([url]);
+        this.router.navigate([url, ]);
     }
 
-    filterView(filter:CategoryFilter, page: number){
+filterView(formvalue:CategoryFilter, page: number){
 
-        this.spinner.show();
-        this.categoryService.getByFilter(filter).subscribe(view =>
-        {
-           this.pagedItems = view.items;
-           this.spinner.hide();
+    let getFilter = new CategoryFilter(formvalue.name, formvalue.active, page, this.itemsByPage);
+    this.spinner.show();
+    this.categoryService.getByFilter(formvalue).subscribe(view =>
+    {
+      this.pager = this.pagerService.getPager(view._total, page, view._pageSize);
+      this.pagedItems = view.items;
+      this.spinner.hide();
 
-        }, 
-        error => {
-            this.spinner.hide();
-        });
+    }, 
+    error =>{
+        this.spinner.hide();
+            });
     }
 }    
