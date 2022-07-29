@@ -91,7 +91,10 @@ import {
   cilSearch,
   cilPlus,
   cilAccountLogout,
-  cilCaretBottom
+  cilCaretBottom,
+  cilClearAll,
+  cilFilter,
+  cilViewQuilt
 } from '@coreui/icons';
 
 export const iconSubset = {
@@ -187,7 +190,10 @@ export const iconSubset = {
   cilSearch,
   cilPlus,
   cilAccountLogout,
-  cilCaretBottom
+  cilCaretBottom,
+  cilClearAll,
+  cilFilter,
+  cilViewQuilt
 };
 
 export enum IconSubset {
@@ -283,5 +289,8 @@ export enum IconSubset {
   cilSearch = 'cilSearch',
   cilPlus = 'cilPlus',
   cilAccountLogout='cilAccountLogout',
-  cilCaretBottom='cilCaretBottom'
+  cilCaretBottom='cilCaretBottom',
+  cilClearAll='cilClearAll',
+  cilFilter='cilfilter',
+  cilViewQuilt = 'cilViewQuilt'
 }
