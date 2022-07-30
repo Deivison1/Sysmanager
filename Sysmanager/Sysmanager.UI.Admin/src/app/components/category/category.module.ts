@@ -1,15 +1,13 @@
-import {CommonModule} from '@angular/common';
-import {FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {NgModule} from '@angular/core';
-import {RouterModule} from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
-import { CustomPaginationModule } from './../pagination/custom-pagination.module';
-import {PagerService} from 'src/app/services/page-service'
-import {CategoryComponent} from './category.component';
-import {CategoryRoutes} from './category.routing';
-import {CategoryViewComponent} from './models/category-view-component';
-import {CategoryMaintenanceComponent} from './category-maintenance/category-maintenance.component';
 
+import { CategoryMaintenanceComponent } from './category-maintenance/category-maintenance.component';
+import { CategoryComponent } from './category.component';
+import { CategoryRoutes } from './category.routing';
+import { CategoryViewComponent } from './models/category-view-component';
 
 import {
     ButtonGroupModule,
@@ -26,11 +24,12 @@ import {
     ToastModule,
   } from '@coreui/angular';
 
-import {IconModule} from '@coreui/icons-angular';
-//import { BarNavigatorModule } from '../bar-navigator/bar-navigator.module';
-import {NgxSpinnerModule} from 'ngx-spinner';
+  import { IconModule } from '@coreui/icons-angular';
+  //import { BarNavigatorModule } from '../bar-navigator/bar-navigator.module';
+import { NgxSpinnerModule } from 'ngx-spinner';
 import { CategoryService } from 'src/app/services/category-service';
-
+import { PagerService } from 'src/app/services/page-service';
+import { CustomPaginationModule } from '../pagination/custom-pagination.module';
 
 @NgModule({
     imports:[
@@ -52,14 +51,12 @@ import { CategoryService } from 'src/app/services/category-service';
         NgxSpinnerModule,
         PaginationModule,
         CustomPaginationModule,
-        //BarNavigatorModule,
         ModalModule,
         ToastModule        
     ],
     providers:[
         CategoryService,
-        PagerService,
-        
+        PagerService
     ],
     declarations:[
         CategoryComponent,

@@ -213,3 +213,4 @@ export abstract class ServiceBase<TResultResponse> {
    }
 
 }
+

@@ -15,7 +15,6 @@
               <c-col [md]="3">
                 <label cLabel for="name">Descrição da categoria</label>
                 <input class="full-control" id="name" placeholder="Descrição da categoria" type="text" formControlName="name"/>
-
               </c-col>
               <c-col [md]="4">
                 <c-row>
@@ -46,13 +45,15 @@
     </c-col> <!--/.col-->
   </div><!--/.row-->
 </div>
-
+<ngx-spinner type="ball-fall">
+  <p style="font-size: 20px; color: white">Aguarde...</p>
+</ngx-spinner>
 
 <ng-template #staticBackdrop>
   <button [cModalToggle]="staticBackdropModal.id" (click)="prepareDelete()" type="submit" size="sm" active="active" class="me-1" color="danger" cButton><svg cIcon class="me-2" name="cil-trash"></svg> Excluir</button>
   <c-modal #staticBackdropModal backdrop="static" id="staticBackdropModal" [visible]="modalVisible">
     <c-modal-header class="modal-header bg-danger">
-      <h5 cModalTitle>Cadastro de Unidade de Medida</h5>
+      <h5 cModalTitle>Cadastro de Categoria</h5>
       <button [cModalToggle]="staticBackdropModal.id" cButtonClose></button>
     </c-modal-header>
     <c-modal-body #mdlBody id="mdlBody">{{bodyDetail}}</c-modal-body>
@@ -62,4 +63,3 @@
     </c-modal-footer>
   </c-modal>
 </ng-template>
-<!-- <ngx-spinner></ngx-spinner>  -->

@@ -32,7 +32,7 @@ const routes: Routes = [
                 path:'category',
                 loadChildren: () =>
                 import('./components/category/category.module').then((m) => m.CategoryModule)
-              }             
+              }   
     ]
   },
   {
