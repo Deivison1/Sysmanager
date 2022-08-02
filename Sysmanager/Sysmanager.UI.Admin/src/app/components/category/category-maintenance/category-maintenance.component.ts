@@ -6,6 +6,8 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { CategoryService } from 'src/app/services/category-service';
 import { CategoryView } from '../models/category-view';
+import { CategoryPost} from '../models/category-post';
+import { CategoryPut} from '../models/category-put';
 
 @Component({
 selector:'app-category-maintenance',
@@ -13,7 +15,7 @@ templateUrl:'./category-maintenance.component.html'
 })
 
 export class CategoryMaintenanceComponent implements OnInit {
-    returnUrl: string ='';
+    returnUrl: string ='/category/category';
     @Input() bodyDetail = ''
     action = 'Inserir';
     @Input() id: any = '';
@@ -28,63 +30,115 @@ export class CategoryMaintenanceComponent implements OnInit {
                 private spinner: NgxSpinnerService,
                 private categoryService: CategoryService,
                 private toastr: ToastrService
-                ){}
+              ){}
 
-    formCategory = new FormGroup({
-                                   id: this.formBuilder.control(this.category.id),
-                                   name: this.formBuilder.control(this.category.name),
-                                   active: this.formBuilder.control(this.category.active)
-                                 });
-                
-    ngOnInit(){
-        this.id = this.activedRouter.snapshot.params['id'];
-        if (this.id != undefined && this.id != this.idDefault && this.id != null) {
-          this.action = 'Alterar';
-          this.getById(this.id);
-        } else {
-          this.action = 'Inserir';
-          this.category = new CategoryView();
-          this.formCategory.patchValue(this.category);
-        }
-    }
-
-    getById(id: string) {
-        this.spinner.show();
-        this.categoryService.getByID(id)
-        .subscribe(view => {
-          this.category = view;
-          console.log('resposta do get...');
-          console.log(JSON.stringify(this.category));
-          this.updateForm(this.category);
-          
-          this.spinner.hide();
-        }, error  => {
-          this.toastr.error(this.defaultMessage(error), this.action); 
-          this.spinner.hide();
-        });
-    }
-
-    updateForm(category: CategoryView){
-    this.formCategory = new FormGroup({
-        id: this.formBuilder.control(category.id),
-        name: this.formBuilder.control(category.name),
-        active: this.formBuilder.control(category.active),});  
-    }
-    
-
-
-    confirmdelete(){}
-    canceldelete(){
-        this.modalVisible = false;
-    }
-    prepareDelete(){}
-    saveChanges(category:any){}
-
-    defaultMessage(message: string): any {
-        var string = message.replace('<div>','').
-        replace('</div>','').
-        replace('<p>','').
-        replace('</p>','');
-        return string;
+  formCategory = new FormGroup({
+                                  id: this.formBuilder.control(this.category.id),
+                                  name: this.formBuilder.control(this.category.name),
+                                  active: this.formBuilder.control(this.category.active)
+                                });
+              
+  ngOnInit(){
+      this.id = this.activedRouter.snapshot.params['id'];
+      if (this.id != undefined && this.id != this.idDefault && this.id != null) {
+        this.action = 'Alterar';
+        this.getById(this.id);
+      } else {
+        this.action = 'Inserir';
+        this.category = new CategoryView();
+        this.formCategory.patchValue(this.category);
       }
+  }
+
+getById(id: string) {
+  this.spinner.show();
+  this.categoryService.getByID(id)
+  .subscribe(view => {
+    this.category = view;
+    this.updateForm(this.category);
+    this.spinner.hide();
+
+  }, error  => {
+    this.sendAnyMessageErro(this.toastr, error, this.action )
+    this.spinner.hide();
+  });
 }
+
+  updateForm(category: CategoryView){
+  this.formCategory = new FormGroup({
+      id: this.formBuilder.control(category.id),
+      name: this.formBuilder.control(category.name),
+      active: this.formBuilder.control(category.active),});  
+  }
+  
+
+
+confirmdelete(){
+
+if (this.category.id !== undefined && this.category.id != '') {
+  this.spinner.show();
+  this.categoryService.delete(this.category.id).subscribe((response: any) => {
+      this.spinner.hide();
+      this.toastr.success(response.message, 'sucesso');
+  }, error => {
+      this.spinner.hide();
+      this.sendAnyMessageErro(this.toastr, error, this.action)
+  });
+    this.modalVisible = false;
+    this.router.navigateByUrl(this.returnUrl);
+  }
+}
+
+canceldelete(){
+  this.modalVisible = false;
+}
+prepareDelete(){
+
+  this.bodyDetail = `Deseja mesmo excluir a categoria (${this.category.name}) ?`;
+}
+
+saveChanges(category:any){
+  if(this.category.id == undefined || this.category.id === ''){
+    this.insertCategory(category);
+  }else{
+    this.upadateCategory(category);
+  }
+}
+
+insertCategory(category: CategoryView){
+
+  const categoryPost = new CategoryPost(category);
+    this.spinner.show();
+    this.categoryService.insert(category).subscribe((response: any) => {
+        this.spinner.hide();
+        this.toastr.success(response.message, 'sucesso');
+    }, 
+    error => {
+        this.spinner.hide();
+        this.sendAnyMessageErro(this.toastr, error, this.action)
+    });
+  
+}
+upadateCategory(category: CategoryView){
+
+  const categoryPut = new CategoryPut(category);
+    this.spinner.show();
+    this.categoryService.update(category).subscribe((response: any) => {
+        this.spinner.hide();
+        this.toastr.success(response.message, 'sucesso');
+  }, 
+  error => {
+      this.spinner.hide();
+      this.sendAnyMessageErro(this.toastr, error, this.action)
+  });
+}
+
+sendAnyMessageErro(toastr: ToastrService, messages: any, action: string) {
+  var listItems = messages.split('</br>');
+  for (let index = 0; index < listItems.length; index++) {
+        const element = listItems[index];
+        if (element != '' && element != undefined)
+            toastr.error(element, action);
+        }
+  }
+} 

@@ -25,9 +25,20 @@ namespace Sysmanager.Application.Helpers
             return result;
         }
         public static ResultData ErrorData(object _data)
+
         {
-            var result = new ResultData(_data, false);
-            return result;
+            if (_data.GetType() == typeof(string))
+            {
+
+                var _error = new ErrorReponse((string) _data);
+                return new ResultData(_error, false);
+            }
+            else if (_data.GetType() == typeof(List<string>))
+            {
+                var _error = new ErrorReponse((List<string>)_data);
+                return new ResultData(_error, false);
+            }
+            return new ResultData(_data, false);
         }
 
         public static IActionResult Convert(ResultData _resultData)

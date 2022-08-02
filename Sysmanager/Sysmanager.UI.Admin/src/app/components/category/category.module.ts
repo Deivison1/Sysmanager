@@ -1,14 +1,14 @@
+import { CustomPaginationModule } from './../pagination/custom-pagination.module';
+import { PagerService } from './../../services/page-service';
+import { CategoryService } from './../../services/category-service';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-
-
 import { CategoryMaintenanceComponent } from './category-maintenance/category-maintenance.component';
 import { CategoryComponent } from './category.component';
 import { CategoryRoutes } from './category.routing';
 import { CategoryViewComponent } from './models/category-view-component';
-
 import {
     ButtonGroupModule,
     ButtonModule,
@@ -23,16 +23,12 @@ import {
     ModalModule,
     ToastModule,
   } from '@coreui/angular';
-
   import { IconModule } from '@coreui/icons-angular';
   //import { BarNavigatorModule } from '../bar-navigator/bar-navigator.module';
-import { NgxSpinnerModule } from 'ngx-spinner';
-import { CategoryService } from 'src/app/services/category-service';
-import { PagerService } from 'src/app/services/page-service';
-import { CustomPaginationModule } from '../pagination/custom-pagination.module';
+   import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
-    imports:[
+    imports: [
         RouterModule.forChild(CategoryRoutes),
         CommonModule,
         FormModule,
@@ -50,18 +46,19 @@ import { CustomPaginationModule } from '../pagination/custom-pagination.module';
         TableModule,
         NgxSpinnerModule,
         PaginationModule,
-        CustomPaginationModule,
+        //BarNavigatorModule,
         ModalModule,
-        ToastModule        
+        ToastModule,
+        CustomPaginationModule
     ],
-    providers:[
+    providers: [
         CategoryService,
-        PagerService
+        PagerService,
     ],
-    declarations:[
+    declarations: [
         CategoryComponent,
         CategoryMaintenanceComponent,
-        CategoryViewComponent
+        CategoryViewComponent,
     ],
 })
 export class CategoryModule {
