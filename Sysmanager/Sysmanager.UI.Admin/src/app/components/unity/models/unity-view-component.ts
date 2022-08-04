@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'app-category-view',
+    selector: 'app-unity-view',
     template: '<router-outlet></router-outlet>'
 })
 
-export class CategoryViewComponent {
+export class UnityViewComponent {
     constructor(){}
 }

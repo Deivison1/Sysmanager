@@ -1,42 +1,43 @@
 
-import { CategoryPut } from './../models/category-put';
-import { CategoryPost } from './../models/category-post';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Guid } from 'guid-typescript';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
-import { CategoryService } from 'src/app/services/category-service';
-import { CategoryView } from '../models/category-view';
+import { UnityPut } from './../models/unity-put';
+import { UnityPost } from './../models/unity-post';
+import { UnityService } from 'src/app/services/unity-service';
+import { UnityView } from '../models/unity-view';
+
 
 @Component({
-    selector: 'app-category-maintenance',
-    templateUrl: './category-maintenance.component.html'
+    selector: 'app-unity-maintenance',
+    templateUrl: './unity-maintenance.component.html'
 })
 
-export class CategoryMaintenanceComponent implements OnInit {
-    returnUrl: string = '/category/category';
+export class UnityMaintenanceComponent implements OnInit {
+    returnUrl: string = '/unity/unity';
     @Input() bodyDetail = ''
     action = 'Inserir';
     @Input() id: any = '';
     idDefault = Guid.EMPTY;
 
     public modalVisible = false;
-    category = new CategoryView();
+    unity = new UnityView();
     constructor(private route: ActivatedRoute,
         private router: Router,
         private formBuilder: FormBuilder,
         private activedRouter: ActivatedRoute,
         private spinner: NgxSpinnerService,
-        private categoryService: CategoryService,
+        private unityService: UnityService,
         private toastr: ToastrService
     ) { }
 
-    formCategory = new FormGroup({
-        id: this.formBuilder.control(this.category.id),
-        name: this.formBuilder.control(this.category.name),
-        active: this.formBuilder.control(this.category.active)
+    formUnity = new FormGroup({
+        id: this.formBuilder.control(this.unity.id),
+        name: this.formBuilder.control(this.unity.name),
+        active: this.formBuilder.control(this.unity.active)
     });
 
     ngOnInit() {
@@ -46,17 +47,17 @@ export class CategoryMaintenanceComponent implements OnInit {
             this.getById(this.id);
         } else {
             this.action = 'Inserir';
-            this.category = new CategoryView();
-            this.formCategory.patchValue(this.category);
+            this.unity = new UnityView();
+            this.formUnity.patchValue(this.unity);
         }
     }
 
     getById(id: string) {
         this.spinner.show();
-        this.categoryService.getByID(id)
+        this.unityService.getByID(id)
             .subscribe(view => {
-                this.category = view;
-                this.updateForm(this.category);
+                this.unity = view;
+                this.updateForm(this.unity);
                 this.spinner.hide();
             }, error => {
                 this.sendAnyMessageErro(this.toastr, error, this.action)
@@ -64,18 +65,18 @@ export class CategoryMaintenanceComponent implements OnInit {
             });
     }
 
-    updateForm(category: CategoryView) {
-        this.formCategory = new FormGroup({
-            id: this.formBuilder.control(category.id),
-            name: this.formBuilder.control(category.name),
-            active: this.formBuilder.control(category.active),
+    updateForm(unity: UnityView) {
+        this.formUnity = new FormGroup({
+            id: this.formBuilder.control(unity.id),
+            name: this.formBuilder.control(unity.name),
+            active: this.formBuilder.control(unity.active),
         });
     }
 
     confirmdelete() {
-        if (this.category.id !== undefined && this.category.id != '') {
+        if (this.unity.id !== undefined && this.unity.id != '') {
             this.spinner.show();
-            this.categoryService.delete(this.category.id).subscribe((response: any) => {
+            this.unityService.delete(this.unity.id).subscribe((response: any) => {
                 this.spinner.hide();
                 this.toastr.success(response.message, 'Sucesso');
             }, error => {
@@ -91,22 +92,22 @@ export class CategoryMaintenanceComponent implements OnInit {
         this.modalVisible = false;
     }
     prepareDelete() {
-        this.bodyDetail = `Deseja mesmo excluir a categoria (${this.category.name}) ?`;
+        this.bodyDetail = `Deseja mesmo excluir a categoria (${this.unity.name}) ?`;
     }
 
-    saveChanges(category: any) {
-        if(this.category.id === undefined || this.category.id === ''){
-            this.insertCategory(category)
+    saveChanges(unity: any) {
+        if(this.unity.id === undefined || this.unity.id === ''){
+            this.insertUnity(unity)
         }
         else {
-            this.updateCategory(category)
+            this.updateUnity(unity)
         }
      }
 
-     insertCategory(category: CategoryView){
-        const categoryPost = new CategoryPost(category);
+     insertUnity(unity: UnityView){
+        const unityPost = new UnityPost(unity);
         this.spinner.show();
-        this.categoryService.insert(categoryPost).subscribe((response: any) => {
+        this.unityService.insert(unityPost).subscribe((response: any) => {
             this.spinner.hide();
             this.toastr.success(response.message, 'Sucesso');
         }, error => {
@@ -115,10 +116,10 @@ export class CategoryMaintenanceComponent implements OnInit {
         });
      }
 
-     updateCategory(category: CategoryView){
-        const categoryPut = new CategoryPut(category);
+     updateUnity(unity: UnityView){
+        const unityPut = new UnityPut(unity);
         this.spinner.show();
-        this.categoryService.update(categoryPut).subscribe((response: any) => {
+        this.unityService.update(unityPut).subscribe((response: any) => {
             this.spinner.hide();
             this.toastr.success(response.message, 'Sucesso');
         }, error => {
@@ -136,5 +137,4 @@ export class CategoryMaintenanceComponent implements OnInit {
         }
     }
 }
-
 

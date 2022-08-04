@@ -1,17 +1,14 @@
-import { Utils } from './../Utils/utils';
 import { CustomPaginationModule } from './../pagination/custom-pagination.module';
 import { PagerService } from './../../services/page-service';
-import { CategoryService } from './../../services/category-service';
+import { UnityService } from './../../services/unity-service';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { CategoryMaintenanceComponent } from './category-maintenance/category-maintenance.component';
-import { CategoryComponent } from './category.component';
-import { CategoryRoutes } from './category.routing';
-import { CategoryViewComponent } from './models/category-view-component';
-
-
+import { UnityMaintenanceComponent } from './unity-maintenance/unity-maintenance.component';
+import { UnityComponent } from './unity.component';
+import { UnityRoutes } from './unity.routing';
+import { UnityViewComponent } from './models/unity-view-component';
 import {
     ButtonGroupModule,
     ButtonModule,
@@ -27,11 +24,12 @@ import {
     ToastModule,
   } from '@coreui/angular';
   import { IconModule } from '@coreui/icons-angular';
-  import { NgxSpinnerModule } from 'ngx-spinner';
+  //import { BarNavigatorModule } from '../bar-navigator/bar-navigator.module';
+   import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
     imports: [
-        RouterModule.forChild(CategoryRoutes),
+        RouterModule.forChild(UnityRoutes),
         CommonModule,
         FormModule,
         FormsModule,
@@ -54,14 +52,14 @@ import {
         CustomPaginationModule
     ],
     providers: [
-        CategoryService,
+        UnityService,
         PagerService,
     ],
     declarations: [
-        CategoryComponent,
-        CategoryMaintenanceComponent,
-        CategoryViewComponent,
+        UnityComponent,
+        UnityMaintenanceComponent,
+        UnityViewComponent,
     ],
 })
-export class CategoryModule {
+export class UnityModule {
 }

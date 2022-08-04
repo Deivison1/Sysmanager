@@ -23,90 +23,90 @@ import {
   DefaultLayoutComponent,
 } from './containers';
 
-import {
-  AvatarModule,
-  BadgeModule,
-  BreadcrumbModule,
-  ButtonGroupModule,
-  ButtonModule,
-  CardModule,
-  DropdownModule,
-  FooterModule,
-  FormModule,
-  GridModule,
-  HeaderModule,
-  ListGroupModule,
-  NavModule,
-  ProgressModule,
-  SharedModule,
-  SidebarModule,
-  TabsModule,
-  UtilitiesModule,
-} from '@coreui/angular';
+      import {
+        AvatarModule,
+        BadgeModule,
+        BreadcrumbModule,
+        ButtonGroupModule,
+        ButtonModule,
+        CardModule,
+        DropdownModule,
+        FooterModule,
+        FormModule,
+        GridModule,
+        HeaderModule,
+        ListGroupModule,
+        NavModule,
+        ProgressModule,
+        SharedModule,
+        SidebarModule,
+        TabsModule,
+        UtilitiesModule,
+      } from '@coreui/angular';
 
-import { IconModule, IconSetService } from '@coreui/icons-angular';
-import { NgxSpinnerModule } from 'ngx-spinner';
-import { ToastrModule } from 'ngx-toastr';
-import { CurrencyMaskModule } from 'ng2-currency-mask';
-import { AccountService } from './services/account-service';
+        import { IconModule, IconSetService } from '@coreui/icons-angular';
+        import { NgxSpinnerModule } from 'ngx-spinner';
+        import { ToastrModule } from 'ngx-toastr';
+        import { CurrencyMaskModule } from 'ng2-currency-mask';
+        import { AccountService } from './services/account-service';
 
-const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
-  suppressScrollX: true,
-};
+      const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+        suppressScrollX: true,
+      };
 
-const APP_CONTAINERS = [
-  DefaultFooterComponent,
-  DefaultHeaderComponent,
-  DefaultLayoutComponent,
-];
+      const APP_CONTAINERS = [
+        DefaultFooterComponent,
+        DefaultHeaderComponent,
+        DefaultLayoutComponent,
+      ];
 
-@NgModule({
-  declarations: [AppComponent, ...APP_CONTAINERS],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    ToastrModule.forRoot(),    
-    AppRoutingModule,
-    AvatarModule,
-    BreadcrumbModule,
-    FooterModule,
-    DropdownModule,
-    GridModule,
-    HeaderModule,
-    SidebarModule,
-    IconModule,
-    PerfectScrollbarModule,
-    NavModule,
-    ButtonModule,
-    FormModule,
-    UtilitiesModule,
-    ButtonGroupModule,
-    ReactiveFormsModule,
-    SidebarModule,
-    SharedModule,
-    TabsModule,
-    ListGroupModule,
-    ProgressModule,
-    BadgeModule,
-    ListGroupModule,
-    CardModule,
-    NgxSpinnerModule,
-    CurrencyMaskModule
-  ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [AccountService,
-    {
-      provide: LocationStrategy,
-      useClass: HashLocationStrategy,
-    },
-    {
-      provide: PERFECT_SCROLLBAR_CONFIG,
-      useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG,
-    },
-    IconSetService,
-    Title
-  ],
-  bootstrap: [AppComponent],
-})
-export class AppModule {
-}
+      @NgModule({
+        declarations: [AppComponent, ...APP_CONTAINERS],
+        imports: [
+          BrowserModule,
+          BrowserAnimationsModule,
+          ToastrModule.forRoot(),    
+          AppRoutingModule,
+          AvatarModule,
+          BreadcrumbModule,
+          FooterModule,
+          DropdownModule,
+          GridModule,
+          HeaderModule,
+          SidebarModule,
+          IconModule,
+          PerfectScrollbarModule,
+          NavModule,
+          ButtonModule,
+          FormModule,
+          UtilitiesModule,
+          ButtonGroupModule,
+          ReactiveFormsModule,
+          SidebarModule,
+          SharedModule,
+          TabsModule,
+          ListGroupModule,
+          ProgressModule,
+          BadgeModule,
+          ListGroupModule,
+          CardModule,
+          NgxSpinnerModule,
+          CurrencyMaskModule
+        ],
+        schemas: [CUSTOM_ELEMENTS_SCHEMA],
+        providers: [AccountService,
+          {
+            provide: LocationStrategy,
+            useClass: HashLocationStrategy,
+          },
+          {
+            provide: PERFECT_SCROLLBAR_CONFIG,
+            useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG,
+          },
+          IconSetService,
+          Title
+        ],
+        bootstrap: [AppComponent],
+      })
+      export class AppModule {
+      }

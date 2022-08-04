@@ -1,5 +1,5 @@
-export class CategoryView{
-    id:string = '';
-    name:string = '';
-    active:boolean = false;
+export class CategoryView {
+    id: string = '';
+    name: string = '';
+    active: boolean = false;
 }

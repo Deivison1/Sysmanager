@@ -1,13 +1,11 @@
+import { UnityView } from './unity-view';
 
-
-import { CategoryView } from './category-view';
-
-export class CategoryPost {
+export class UnityPost {
     name: string ='';
     active: boolean = false;
 
     
-    constructor(obj: CategoryView){
+    constructor(obj: UnityView){
         this.name = obj.name;
         this.active = obj.active;
     }

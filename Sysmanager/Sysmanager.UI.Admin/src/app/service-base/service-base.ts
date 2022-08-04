@@ -14,26 +14,26 @@ export class ViewResult<T> {
 
 @Injectable()
 export abstract class ServiceBase<TResultResponse> {
-    
+
     protected servicesConfig;
     public http: HttpClient;
-    bearerToken: string ='';
+    bearerToken: string = '';
     reloadTokenURL: string;
     headers = new HttpHeaders;
 
     constructor(
         config: ConfigInstance
-    ) { 
+    ) {
         this.servicesConfig = config;
         this.http = new HttpClient(new HttpXhrBackend({ build: () => new XMLHttpRequest() }));
-        
+
         this.reloadTokenURL = `${environment.url_reload}`;
     }
-   
+
     insert(post: object): Observable<string> {
         this.headers = this.getHeaderToken();
         return this.http.post(`${this.servicesConfig.endpoint}/insert`,
-        JSON.stringify(post), {
+            JSON.stringify(post), {
             headers: this.headers,
             observe: 'response'
         }).pipe(
@@ -41,11 +41,11 @@ export abstract class ServiceBase<TResultResponse> {
             catchError(this.serviceError.bind(this))
         );
     }
-    
+
     update(put: object): Observable<string> {
         this.headers = this.getHeaderToken();
         return this.http.put(`${this.servicesConfig.endpoint}/update`,
-        JSON.stringify(put), {
+            JSON.stringify(put), {
             headers: this.headers,
             observe: 'response'
         }).pipe(
@@ -57,8 +57,8 @@ export abstract class ServiceBase<TResultResponse> {
     getByID(id: any): Observable<TResultResponse> {
         this.headers = this.getHeaderToken();
         let endpoint = this.servicesConfig.endpoint + `/id/${id}`;
-        
-        return this.http.get(endpoint, {headers: this.headers }).pipe(
+
+        return this.http.get(endpoint, { headers: this.headers }).pipe(
             map(this.extractData),
             catchError(this.serviceError.bind(this))
         );
@@ -72,7 +72,7 @@ export abstract class ServiceBase<TResultResponse> {
         for (var name of properties_arrays) {
             queryString = queryString + name.toLowerCase() + "=" + Reflect.get(filter, name) + "&";
         }
-        
+
         let timeStamp = +new Date();
         queryString = queryString + timeStamp;
         const params = new HttpParams({ fromString: queryString });
@@ -82,24 +82,24 @@ export abstract class ServiceBase<TResultResponse> {
             catchError(this.serviceError.bind(this))
         );
     }
-    
+
     delete(id: string): Observable<string> {
         this.headers = this.getHeaderToken();
         let endpoint = this.servicesConfig.endpoint + `/id/${id}`;
-        
+
         return this.http.delete(endpoint, { headers: this.headers }).pipe(
             map(this.extractData),
             catchError(this.serviceError.bind(this))
         );
-    }    
+    }
 
     login(post: object): Observable<string> {
         let endpoint = `${this.servicesConfig.endpoint}/login`;
         this.headers = new HttpHeaders()
-        .set('Content-Type', 'application/json') 
+            .set('Content-Type', 'application/json')
 
         return this.http.post(endpoint,
-        JSON.stringify(post), {
+            JSON.stringify(post), {
             headers: this.headers,
             observe: 'response'
         }).pipe(
@@ -111,69 +111,65 @@ export abstract class ServiceBase<TResultResponse> {
     createAccount(post: object): Observable<string> {
         this.headers = this.getHeaderToken();
         return this.http.post(`${this.servicesConfig.endpoint}/create-account`,
-        JSON.stringify(post), {
+            JSON.stringify(post), {
             headers: this.headers,
             observe: 'response'
         }).pipe(
             map(this.extractData),
             catchError(this.serviceError.bind(this))
         );
-    }  
-      
+    }
+
     recoveryAccount(put: object): Observable<string> {
         this.headers = this.getHeaderToken();
         return this.http.put(`${this.servicesConfig.endpoint}/recovery-account`,
-        JSON.stringify(put), {
+            JSON.stringify(put), {
             headers: this.headers,
             observe: 'response'
         }).pipe(
             map(this.extractData),
             catchError(this.serviceError.bind(this))
         );
-    }    
-    
+    }
+
     protected serviceError(response: any) {
-        
+
         let errorMessage = '';
-        if (response.status == "0")
-        {
+        if (response.status == "0") {
             errorMessage = "Erro ao se conectar à base de dados!";
             //this.bearerToken = '';
             //this.deleteCurrentUser();
             //window.location.href = this.reloadTokenURL;
         }
 
-        if (response.status == "401")
-        {
+        if (response.status == "401") {
             this.bearerToken = '';
             this.deleteCurrentUser();
             window.location.href = this.reloadTokenURL;
         }
 
         if (response.status == "403")
-           errorMessage = 'Requisição não permitida ou sem autorização';   
+            errorMessage = 'Requisição não permitida ou sem autorização';
 
         if (response.status == "405")
-           errorMessage = response.error ? response.error.error.message : "Erro interno no servidor!"
-        
-        if (response.status == "500")    
-           errorMessage = response.error ? response.error.Message : "Erro interno no servidor!"
-        
+            errorMessage = response.error ? response.error.error.message : "Erro interno no servidor!"
 
-           if (response.status == "400") {
-            if(response.error.data.errors != undefined){
-                   response.error.data.errors.forEach(function (item: { message: string; }) {
-                   errorMessage += item + '</br>';
-                   });
+        if (response.status == "500")
+            errorMessage = response.error ? response.error.Message : "Erro interno no servidor!"
+
+            if (response.status == "400") {
+                if(response.error.data.errors != undefined){
+                       response.error.data.errors.forEach(function (item: { message: string; }) {
+                       errorMessage += item + '</br>';
+                       });
+                }
+                else {
+                    errorMessage = 'Erro interno no servidor!';
+                }
             }
-            else {
-                errorMessage = 'Erro interno no servidor!';
-            }
-        }
-        
         return throwError(errorMessage);
     }
-    
+
     protected extractData(response: any) {
         return response.data || response.body.data || {};
     }
@@ -181,36 +177,35 @@ export abstract class ServiceBase<TResultResponse> {
     getCurrentUser(): void {
         var result = localStorage.getItem('currentUser');
         if (result == null)
-          return;
+            return;
 
         return JSON.parse(result);
     }
 
     deleteCurrentUser(): void {
         localStorage.removeItem('currentUser');
-            }
+    }
 
 
     getHeaderToken(): any {
         const currentUser = this.getCurrentUser();
         var token: string = '';
 
-        if (currentUser != null)
-        {
-           token = currentUser['token'];
+        if (currentUser != null) {
+            token = currentUser['token'];
 
-           return new HttpHeaders()
-           .set('Content-Type', 'application/json; charset=utf-8') 
-           .set('Authorization', `Basic ${ token }`)
-           .set('token', ` ${token}`);
+            return new HttpHeaders()
+                .set('Content-Type', 'application/json; charset=utf-8')
+                .set('Authorization', `Basic ${token}`)
+                .set('token', ` ${token}`);
         }
-        
+
         return new HttpHeaders()
-        .set('Content-Type', 'application/json; charset=utf-8') 
-        .set('Authorization', `Basic`)
-        .set('token', ``)
-        ;
-   }
+            .set('Content-Type', 'application/json; charset=utf-8')
+            .set('Authorization', `Basic`)
+            .set('token', ``)
+            ;
+    }
 
 }
 
