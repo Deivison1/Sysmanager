@@ -42,7 +42,12 @@ import { DefaultLayoutComponent } from './containers';
             path: 'product-type',
             loadChildren: () =>
               import('./components/productType/product-type.module').then((m) => m.ProductTypeModule)
-          }
+          },
+          {
+            path:'product',
+            loadChildren: () =>
+            import('./components/product/product.module').then((m) => m.ProductModule)
+          } 
           
         ]
     },
