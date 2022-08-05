@@ -38,6 +38,11 @@ import { DefaultLayoutComponent } from './containers';
             loadChildren: () =>
               import('./components/unity/unity.module').then((m) => m.UnityModule)
           },
+          {
+            path: 'product-type',
+            loadChildren: () =>
+              import('./components/productType/product-type.module').then((m) => m.ProductTypeModule)
+          }
           
         ]
     },
