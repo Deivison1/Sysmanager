@@ -16,6 +16,7 @@ namespace Sysmanager.Application.Validators.Product
                                           UnityRepository unityRepository
                                           )
         {
+
             RuleFor(product => product.Id)
                 .Must(id => !string.IsNullOrEmpty(id.ToString()))
                 .WithMessage(SysManagerErrors.Product_Put_BadRequest_Id_Cannot_Be_Null_Or_Empty.Description());

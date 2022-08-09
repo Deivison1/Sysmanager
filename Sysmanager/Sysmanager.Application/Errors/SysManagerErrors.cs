@@ -7,6 +7,7 @@ namespace Sysmanager.Application.Errors
 {
     public enum SysManagerErrors
     {
+
         #region User
         [Description("Necessário informar a propriedade (Username)")]
         User_Post_BadRequest_UserName_Cannot_Be_Null_Or_Empty,
@@ -226,6 +227,7 @@ namespace Sysmanager.Application.Errors
 
         #endregion
 
-    }
 
+    }
 }
+

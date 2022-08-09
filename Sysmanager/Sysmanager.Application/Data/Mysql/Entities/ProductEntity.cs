@@ -83,4 +83,3 @@ namespace Sysmanager.Application.Data.MySql.Entities
 
 
 
-

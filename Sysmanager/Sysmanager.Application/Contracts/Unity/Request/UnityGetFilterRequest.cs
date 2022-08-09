@@ -20,3 +20,4 @@ namespace Sysmanager.Application.Contracts.Unity.Request
         public int pageSize { get; set; }
     }
 }
+

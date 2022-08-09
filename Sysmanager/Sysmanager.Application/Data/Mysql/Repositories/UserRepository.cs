@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace Sysmanager.Application.Data.Mysql.Repositories
 {
+    /// <summary>
+    /// Classe responsável por se comunicar com o Banco de dados e
+    /// executar os comandos de CRUD
+    /// </summary>
     public class UserRepository
     {
         private readonly MySqlContext _context;
@@ -83,3 +87,4 @@ namespace Sysmanager.Application.Data.Mysql.Repositories
         }
     }
 }
+

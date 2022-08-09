@@ -6,6 +6,7 @@ using Sysmanager.Application.Helpers;
 
 namespace Sysmanager.Application.Validators.Category
 {
+
     public class CategoryPutRequestValidator : AbstractValidator<CategoryPutRequest>
     {
         public CategoryPutRequestValidator(CategoryRepository repository)

@@ -8,6 +8,7 @@ using System.Text;
 
 namespace Sysmanager.Application.Validators.Unity
 {
+
     public class UnityGetFilterRequestValidator : AbstractValidator<UnityGetFilterRequest>
     {
         public UnityGetFilterRequestValidator()

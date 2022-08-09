@@ -4,6 +4,7 @@ using System.Text;
 
 namespace Sysmanager.Application.Contracts.ProductType.Request
 {
+
     public class ProductTypePutRequest
     {
         public Guid Id { get; set; }

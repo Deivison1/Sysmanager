@@ -35,7 +35,7 @@ namespace Sysmanager.Application.Helpers
             var day = data.Substring(6, 2);
 
             var hour = data.Substring(8, 2);
-            var minutes = data.Substring(10, 2);
+            var minutes = data.Substring(30, 2);
             var seconds = data.Substring(12, 2);
 
             var date = Convert.ToDateTime(year + '-' + month + '-' + day + ' ' + hour + ':' + minutes + ':' + seconds);
@@ -105,3 +105,4 @@ namespace Sysmanager.Application.Helpers
         }
     }
 }
+

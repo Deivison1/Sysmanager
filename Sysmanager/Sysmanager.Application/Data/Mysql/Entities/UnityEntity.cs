@@ -36,3 +36,4 @@ namespace Sysmanager.Application.Data.Mysql.Entities
         public bool Active { get; set; }
     }
 }
+

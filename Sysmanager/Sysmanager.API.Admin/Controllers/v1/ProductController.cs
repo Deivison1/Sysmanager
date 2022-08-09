@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Sysmanager.API.Admin.Controllers.v1
 {
+
     [Authorize]
     [ApiVersion("1.0")]
     [Route("api/v{version:apiVersion}/[controller]")]
@@ -55,3 +56,5 @@ namespace Sysmanager.API.Admin.Controllers.v1
         }
     }
 }
+
+

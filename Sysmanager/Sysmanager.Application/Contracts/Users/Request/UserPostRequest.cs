@@ -5,24 +5,23 @@ using System.Text;
 namespace Sysmanager.Application.Contracts.Users.Request
 {
     /// <summary>
-    /// classe responsavel de contrato de requisicao para cadastrar um novo usuario
+    /// Classe de "Contrato" responsável pela requeicsicção para cadastrar um novo usuário
     /// </summary>
     public class UserPostRequest
     {
         /// <summary>
-        /// Propriedade que se refere ao nome do usuario
+        /// Propriedade que refere-se ao nome do usuário
         /// </summary>
-        public string UserName{ get; set; }
-        
+        public string UserName { get; set; }
 
         /// <summary>
-        /// Propriedade que se refere ao email do usuario
+        /// Propriedade que refere-se ao e-mail do usuário
         /// </summary>
         public string Email { get; set; }
 
         /// <summary>
-        /// Propriedade que se refere a senha do usuario
+        /// propriedade que refere-se a senha do usuário
         /// </summary>
-        public string Password{ get; set; }
+        public string Password { get; set; }
     }
 }
