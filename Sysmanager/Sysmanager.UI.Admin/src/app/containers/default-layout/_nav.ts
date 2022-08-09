@@ -26,7 +26,7 @@ export const navItems: INavData[] = [
       },
       {
         iconComponent: {name:'cil-Spreadsheet'},
-        name:'Novo Produtos',
+        name:'Novo Produto',
         url:'/product/maintenance'
       },
     ]
