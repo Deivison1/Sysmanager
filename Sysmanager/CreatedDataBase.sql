@@ -61,9 +61,9 @@ CREATE TABLE IF NOT EXISTS sysmanager.product
 `creationDate` DateTime NOT NULL DEFAULT NOW() COMMENT 'data de criação do registro',
 `updateDate` DateTime NULL COMMENT 'data de atualização do registro',
 PRIMARY KEY(`id`),
-CONSTRAINT `fk_producType` FOREIGN KEY (`productTypeId`) REFERENCES sysManager.productType(`id`),
-CONSTRAINT `fk_category` FOREIGN KEY (`categoryId`) REFERENCES sysManager.category(`id`),
-CONSTRAINT `fk_unity` FOREIGN KEY (`unityId`) REFERENCES sysManager.unity(`id`)
+CONSTRAINT `fk_producType` FOREIGN KEY (`productTypeId`) REFERENCES sysmanager.productType(`id`),
+CONSTRAINT `fk_category` FOREIGN KEY (`categoryId`) REFERENCES sysmanager.category(`id`),
+CONSTRAINT `fk_unity` FOREIGN KEY (`unityId`) REFERENCES sysmanager.unity(`id`)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
 );
