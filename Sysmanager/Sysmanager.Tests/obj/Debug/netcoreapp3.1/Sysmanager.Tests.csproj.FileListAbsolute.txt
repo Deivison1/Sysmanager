@@ -121,3 +121,5 @@ D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.Tests\obj\Debug\netcoreapp3.1\Sys
 D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.Tests\obj\Debug\netcoreapp3.1\Sysmanager.Tests.dll
 D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.Tests\obj\Debug\netcoreapp3.1\Sysmanager.Tests.pdb
 D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.Tests\obj\Debug\netcoreapp3.1\Sysmanager.Tests.genruntimeconfig.cache
+D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.Tests\bin\Debug\netcoreapp3.1\Castle.Core.dll
+D:\Full Stack\Sysmanager\Sysmanager\Sysmanager.Tests\bin\Debug\netcoreapp3.1\Moq.dll
